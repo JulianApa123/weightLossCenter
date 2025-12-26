@@ -1,11 +1,43 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 3;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const carouselImages = [
+    '/carousel-1.jpg',
+    '/carousel-2.jpg',
+    '/carousel-3.jpg'
+  ];
+
+  const carouselTitles = [
+    'Initial Medical Assessment',
+    'Personalized Meal Plan',
+    'Physical Activity Plan'
+  ];
 
   return (
     <div className="min-h-screen">
@@ -38,9 +70,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-white">
-        <div className="grid grid-cols-2 min-h-[calc(100vh-88px)]">
-          {/* Left Side - Image Placeholder */}
-          <div className="bg-gray-200"></div>
+        <div className="grid grid-cols-2 h-[600px]">
+          {/* Left Side - Image */}
+          <div className="relative overflow-hidden">
+            <img 
+              src="/hero-image.jpg" 
+              alt="Weight Loss Consultation"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
           
           {/* Right Side - Content */}
           <div className="flex items-center justify-center px-16">
@@ -85,7 +123,9 @@ export default function Home() {
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
                 Medical Barries Go<br />Ignored
               </h3>
-              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
+                <span className="text-7xl">🩺</span>
+              </div>
             </div>
 
             {/* Column 2 */}
@@ -93,7 +133,9 @@ export default function Home() {
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
                 Cookie Cutter<br />Programs Don't Work
               </h3>
-              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
+                <span className="text-7xl">📋</span>
+              </div>
             </div>
 
             {/* Column 3 */}
@@ -101,7 +143,9 @@ export default function Home() {
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
                 No Support When It<br />Matters Most
               </h3>
-              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
+                <span className="text-7xl">💔</span>
+              </div>
             </div>
           </div>
         </div>
@@ -122,22 +166,40 @@ export default function Home() {
 
           {/* Carousel */}
           <div className="max-w-5xl mx-auto relative">
-            <div className="bg-gray-200 rounded-lg p-16 min-h-[500px] flex items-start">
-              <h3 className="text-3xl font-semibold text-gray-700">
-                Initial Comprehensive Assessment
-              </h3>
+            <div className="bg-gray-200 rounded-lg overflow-hidden min-h-[500px] relative">
+              {/* Carousel Image */}
+              <img 
+                src={carouselImages[currentSlide]} 
+                alt={`Slide ${currentSlide + 1}`}
+                className="w-full h-[500px] object-cover"
+              />
+              
+              {/* Text Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-white/90 px-12 py-6 rounded-lg shadow-lg">
+                  <h3 className="text-4xl font-bold text-[#1a2744] text-center">
+                    {carouselTitles[currentSlide]}
+                  </h3>
+                </div>
+              </div>
               
               {/* Navigation Arrows */}
-              <button className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-300 rounded flex items-center justify-center hover:bg-gray-400">
-                <span className="text-2xl text-gray-600">←</span>
+              <button 
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 rounded flex items-center justify-center hover:bg-white transition shadow-lg z-10"
+              >
+                <span className="text-2xl text-gray-700">←</span>
               </button>
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-300 rounded flex items-center justify-center hover:bg-gray-400">
-                <span className="text-2xl text-gray-600">→</span>
+              <button 
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 rounded flex items-center justify-center hover:bg-white transition shadow-lg z-10"
+              >
+                <span className="text-2xl text-gray-700">→</span>
               </button>
               
               {/* Page Indicator */}
-              <div className="absolute bottom-8 right-8 text-2xl text-gray-600">
-                1
+              <div className="absolute bottom-8 right-8 text-2xl text-white bg-gray-800/50 px-4 py-2 rounded z-10">
+                {currentSlide + 1}
               </div>
             </div>
           </div>
