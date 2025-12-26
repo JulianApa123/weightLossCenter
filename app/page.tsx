@@ -1,180 +1,465 @@
+'use client';
+
+import { useEffect } from 'react';
+
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Header/Navigation */}
-      <header className="bg-white shadow-sm">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-blue-600">
-              Weight Loss Center
+      <header className="bg-white border-b border-gray-200">
+        <nav className="container mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            {/* Left Menu Items */}
+            <div className="flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 1</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 2</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 3</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 4</a>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#services" className="text-gray-700 hover:text-blue-600">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600">About</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600">Testimonials</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
+            
+            {/* Center Logo */}
+            <div className="flex items-center space-x-3">
+              <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
+              <span className="text-xl font-medium text-gray-900">Lumena Clinic</span>
             </div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-              Book Consultation
-            </button>
+            
+            {/* Right Menu Items */}
+            <div className="flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 5</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 6</a>
+            </div>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+      <section className="bg-white">
+        <div className="grid grid-cols-2 min-h-[calc(100vh-88px)]">
+          {/* Left Side - Image Placeholder */}
+          <div className="bg-gray-200"></div>
+          
+          {/* Right Side - Content */}
+          <div className="flex items-center justify-center px-16">
+            <div className="max-w-xl">
+              <h1 className="text-5xl font-bold text-[#1a2744] mb-8 leading-tight">
+                Achieve Lasting Weight Loss With Medical Expertise
+              </h1>
+              <p className="text-lg text-gray-600 mb-12 leading-relaxed">
+                Personalized nutritional programs, advanced diagnostic tools, and behavioral health support for those who struggle with weight loss.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400">
+                  Button 1
+                </button>
+                <button className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400">
+                  Button 2
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Weight Loss Philosophy Section */}
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Transform Your Life with Expert Weight Loss Solutions
-            </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              Medically supervised weight loss programs designed for lasting results. 
-              Start your journey to a healthier, happier you today.
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#1a2744] mb-6">
+              Weight Loss Isn't Just About<br />Diet & Exercise
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              If you have a BMI over 25 and have tried commercial programs without lasting success,<br />
+              you already know the truth: conventional weight loss methods aren't effective.
             </p>
-            <div className="flex gap-4">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">
-                Get Started
-              </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-50">
-                Learn More
-              </button>
+          </div>
+
+          {/* Three Columns */}
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {/* Column 1 */}
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
+                Medical Barries Go<br />Ignored
+              </h3>
+              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
+                Cookie Cutter<br />Programs Don't Work
+              </h3>
+              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
+            </div>
+
+            {/* Column 3 */}
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
+                No Support When It<br />Matters Most
+              </h3>
+              <div className="w-48 h-48 bg-gray-300 rounded-full mx-auto"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      {/* Center of Excellence Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 border rounded-lg hover:shadow-lg transition">
-              <div className="text-blue-600 text-4xl mb-4">💊</div>
-              <h3 className="text-2xl font-semibold mb-3">Medical Weight Loss</h3>
-              <p className="text-gray-600">
-                Physician-supervised programs using the latest medical approaches for safe, effective weight loss.
-              </p>
-            </div>
-            <div className="p-6 border rounded-lg hover:shadow-lg transition">
-              <div className="text-blue-600 text-4xl mb-4">🥗</div>
-              <h3 className="text-2xl font-semibold mb-3">Nutrition Counseling</h3>
-              <p className="text-gray-600">
-                Personalized meal plans and nutritional guidance from certified dietitians.
-              </p>
-            </div>
-            <div className="p-6 border rounded-lg hover:shadow-lg transition">
-              <div className="text-blue-600 text-4xl mb-4">💪</div>
-              <h3 className="text-2xl font-semibold mb-3">Lifestyle Coaching</h3>
-              <p className="text-gray-600">
-                Ongoing support and accountability to build sustainable healthy habits.
-              </p>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#1a2744] mb-4">
+              That's Why We Created A<br />Center Of Excellence
+            </h2>
+            <p className="text-xl text-gray-600 mt-8">
+              Our Core Offerings Will Include
+            </p>
+          </div>
+
+          {/* Carousel */}
+          <div className="max-w-5xl mx-auto relative">
+            <div className="bg-gray-200 rounded-lg p-16 min-h-[500px] flex items-start">
+              <h3 className="text-3xl font-semibold text-gray-700">
+                Initial Comprehensive Assessment
+              </h3>
+              
+              {/* Navigation Arrows */}
+              <button className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-300 rounded flex items-center justify-center hover:bg-gray-400">
+                <span className="text-2xl text-gray-600">←</span>
+              </button>
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-300 rounded flex items-center justify-center hover:bg-gray-400">
+                <span className="text-2xl text-gray-600">→</span>
+              </button>
+              
+              {/* Page Indicator */}
+              <div className="absolute bottom-8 right-8 text-2xl text-gray-600">
+                1
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
+      {/* Our Team Section */}
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">Expert Care You Can Trust</h2>
-              <p className="text-gray-700 mb-4">
-                Our board-certified physicians specialize in medical weight management, 
-                combining proven treatments with personalized care.
-              </p>
-              <p className="text-gray-700 mb-6">
-                With over 15 years of experience, we've helped thousands of patients 
-                achieve their weight loss goals and maintain long-term success.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  Board-certified physicians
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  Evidence-based treatments
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  Personalized care plans
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  Ongoing support and monitoring
-                </li>
-              </ul>
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Our Team Is Comprised Of<br />The Best
+          </h2>
+
+          {/* Content Grid */}
+          <div className="grid grid-cols-3 gap-16 max-w-6xl mx-auto items-center">
+            {/* Left Side - Stats */}
+            <div className="space-y-8">
+              <div className="w-56 h-56 bg-gray-300 rounded-full flex items-center justify-center mx-auto">
+                <p className="text-center text-gray-700 font-medium px-8">
+                  # Years Of<br />Combined<br />Experience
+                </p>
+              </div>
+              <div className="w-56 h-56 bg-gray-300 rounded-full flex items-center justify-center mx-auto">
+                <p className="text-center text-gray-700 font-medium px-8">
+                  # Combined<br />Patients Treated
+                </p>
+              </div>
             </div>
-            <div className="bg-blue-200 rounded-lg h-96 flex items-center justify-center">
-              <p className="text-gray-600">[Doctor Photo Placeholder]</p>
+
+            {/* Middle - Team Roles */}
+            <div className="space-y-12 text-center">
+              <h3 className="text-2xl font-semibold text-gray-700">
+                Exercise<br />Physiologists
+              </h3>
+              <h3 className="text-2xl font-semibold text-gray-700">
+                Behavioral<br />Therapists
+              </h3>
+              <h3 className="text-2xl font-semibold text-gray-700">
+                Registered<br />Dietitians
+              </h3>
+            </div>
+
+            {/* Right Side - Treatment Plan Message */}
+            <div className="flex items-center">
+              <h3 className="text-3xl font-bold text-[#1a2744] leading-snug">
+                To Guide You Along A Personalized Treatment Plan
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Our Process
+          </h2>
+
+          {/* Process Flow */}
+          <div className="max-w-5xl mx-auto">
+            {/* Initial Assessment + Then Choose One */}
+            <div className="flex items-center gap-8 mb-12">
+              <h3 className="text-3xl font-semibold text-gray-700">
+                Initial<br />Assessment
+              </h3>
+              <p className="text-lg text-[#1a2744]">
+                Then Choose One
+              </p>
+            </div>
+
+            {/* Programs */}
+            <div className="space-y-8 pl-12">
+              {/* Intensive Weight Loss Program */}
+              <div className="flex items-start gap-16">
+                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
+                  Intensive<br />Weight Loss<br />Program
+                </h3>
+                <ul className="space-y-1 text-base text-gray-700">
+                  <li>• Structured</li>
+                  <li>• Multi-week</li>
+                  <li>• Frequent Appointments</li>
+                </ul>
+              </div>
+
+              {/* Maintenance Program */}
+              <div className="flex items-start gap-16">
+                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
+                  Maintenance<br />Program
+                </h3>
+                <ul className="space-y-1 text-base text-gray-700">
+                  <li>• Monthly/Bi-Weekly Check-ins</li>
+                  <li>• Group Support</li>
+                  <li>• Access To Resources For Long Term Success</li>
+                </ul>
+              </div>
+
+              {/* A La Carte Services */}
+              <div className="flex items-start gap-16">
+                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
+                  A La Carte<br />Services
+                </h3>
+                <ul className="space-y-1 text-base text-gray-700">
+                  <li>• Choose Specific Services</li>
+                  <li>• ...</li>
+                  <li>• ...</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Success Stories</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-gray-50 rounded-lg">
-              <div className="text-yellow-500 mb-4">★★★★★</div>
-              <p className="text-gray-700 mb-4">
-                "I lost 45 pounds in 6 months! The team was supportive every step of the way."
-              </p>
-              <p className="font-semibold">- Sarah M.</p>
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Testimonials
+          </h2>
+
+          {/* Testimonial Cards */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
+            {/* Card 1 */}
+            <div>
+              <div className="bg-gray-300 rounded-lg h-96 mb-6"></div>
+              <p className="text-2xl text-gray-700 font-medium text-center">Name</p>
             </div>
-            <div className="p-6 bg-gray-50 rounded-lg">
-              <div className="text-yellow-500 mb-4">★★★★★</div>
-              <p className="text-gray-700 mb-4">
-                "Finally found a program that works. Down 60 pounds and feeling amazing!"
-              </p>
-              <p className="font-semibold">- John D.</p>
+
+            {/* Card 2 */}
+            <div>
+              <div className="bg-gray-300 rounded-lg h-96 mb-6"></div>
+              <p className="text-2xl text-gray-700 font-medium text-center">Name</p>
             </div>
-            <div className="p-6 bg-gray-50 rounded-lg">
-              <div className="text-yellow-500 mb-4">★★★★★</div>
-              <p className="text-gray-700 mb-4">
-                "The personalized approach made all the difference. Highly recommend!"
+          </div>
+
+          {/* Carousel Dots */}
+          <div className="flex justify-center gap-3 mb-12">
+            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
+            <div className="w-4 h-4 bg-gray-600 rounded-full"></div>
+            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
+            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <button className="border-2 border-[#1a2744] text-[#1a2744] px-12 py-4 rounded-full text-xl font-medium hover:bg-[#1a2744] hover:text-white transition">
+              Hear More Member Stories
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule CTA Section */}
+      <section className="py-20 bg-white border-b-2 border-gray-800">
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Schedule A Comprehensive<br />Assessment
+          </h2>
+
+          {/* Icons */}
+          <div className="grid grid-cols-3 gap-16 max-w-4xl mx-auto mb-16">
+            <div className="flex justify-center">
+              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex justify-center items-center gap-6 max-w-5xl mx-auto">
+            <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+              Call Now
+            </button>
+            <button className="bg-gray-300 text-gray-700 px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+              Schedule An Appointment
+            </button>
+            <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+              Email Us
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-100 border-b-2 border-gray-800">
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Frequently Asked<br />Questions
+          </h2>
+
+          {/* FAQ Items */}
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* FAQ 1 */}
+            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
+              <p className="text-2xl text-gray-600 pr-8">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit.
               </p>
-              <p className="font-semibold">- Michelle R.</p>
+              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
+                +
+              </button>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
+              <p className="text-2xl text-gray-600 pr-8">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit.
+              </p>
+              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
+                +
+              </button>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
+              <p className="text-2xl text-gray-600 pr-8">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit.
+              </p>
+              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
+                +
+              </button>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
+              <p className="text-2xl text-gray-600 pr-8">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit.
+              </p>
+              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
+                +
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact/CTA Section */}
-      <section id="contact" className="py-20 bg-blue-600 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Schedule your free consultation today and take the first step toward a healthier you.
-          </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100">
-            Book Free Consultation
-          </button>
-          <div className="mt-12 grid md:grid-cols-3 gap-8 text-left max-w-3xl mx-auto">
-            <div>
-              <h3 className="font-semibold mb-2">📍 Address</h3>
-              <p>123 Medical Plaza<br />City, State 12345</p>
+      {/* Find Us / Map Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
+            Find Us
+          </h2>
+
+          {/* Map Container */}
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+            {/* Left Side - Address and Buttons */}
+            <div className="space-y-8">
+              <div className="text-2xl text-gray-700">
+                1234 Street Avenue<br />
+                12345, City, State
+              </div>
+              
+              <div className="space-y-4">
+                <button className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition">
+                  Open In Apple Maps
+                </button>
+                <button className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition">
+                  Open In Google Maps
+                </button>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-2">📞 Phone</h3>
-              <p>(555) 123-4567</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">📧 Email</h3>
-              <p>info@weightlosscenter.com</p>
-            </div>
+
+            {/* Right Side - Map Placeholder */}
+            <div className="bg-gray-300 rounded-lg h-96"></div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 Weight Loss Center. All rights reserved.</p>
+      <footer className="bg-gray-100 py-12 border-t border-gray-300">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-3 gap-8 items-start mb-8">
+            {/* Left - Logo */}
+            <div>
+              <div className="w-24 h-24 bg-gray-300 rounded-full"></div>
+            </div>
+
+            {/* Center - Navigation */}
+            <div className="space-y-6">
+              {/* First Row */}
+              <div className="grid grid-cols-4 gap-4 text-gray-700">
+                <a href="#" className="hover:text-[#1a2744]">Page 1</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 2</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 3</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 4</a>
+              </div>
+              {/* Second Row */}
+              <div className="grid grid-cols-4 gap-4 text-gray-700">
+                <a href="#" className="hover:text-[#1a2744]">Page 5</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 6</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 7</a>
+                <a href="#" className="hover:text-[#1a2744]">Page 8</a>
+              </div>
+            </div>
+
+            {/* Right - Social Icons */}
+            <div className="flex justify-end gap-6">
+              <a href="#" className="text-4xl hover:opacity-70">📷</a>
+              <a href="#" className="text-4xl hover:opacity-70">f</a>
+              <a href="#" className="text-4xl hover:opacity-70">🎵</a>
+              <a href="#" className="text-4xl hover:opacity-70">in</a>
+            </div>
+          </div>
+
+          {/* Bottom Row - Copyright and Legal */}
+          <div className="flex justify-between items-center pt-8 border-t border-gray-300">
+            <p className="text-gray-600">2025 Lumena Clinic Inc</p>
+            <div className="flex gap-8 text-gray-600">
+              <a href="#" className="hover:text-[#1a2744]">Terms of Use</a>
+              <a href="#" className="hover:text-[#1a2744]">Privacy Policy</a>
+              <a href="#" className="hover:text-[#1a2744]">Notice of Privacy Practices</a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
