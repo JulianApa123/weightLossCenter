@@ -30,7 +30,7 @@ export default function Services() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="/#schedule" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
+              <a href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function Services() {
                 </ul>
 
                 <Link
-                  href="/#schedule"
+                  href="/appointments"
                   className="block w-full bg-[#1a2744] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#2a3754] transition"
                 >
                   Get Started
@@ -434,7 +434,7 @@ export default function Services() {
                 </ul>
 
                 <Link
-                  href="/#schedule"
+                  href="/appointments"
                   className="block w-full bg-gray-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
                 >
                   Learn More
@@ -489,7 +489,7 @@ export default function Services() {
                 </ul>
 
                 <Link
-                  href="/#schedule"
+                  href="/appointments"
                   className="block w-full bg-gray-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
                 >
                   Contact Us
@@ -567,7 +567,7 @@ export default function Services() {
             Schedule your comprehensive assessment and discover which program is right for you.
           </p>
           <Link 
-            href="/#schedule"
+            href="/appointments"
             className="inline-block bg-white text-[#1a2744] px-12 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition"
           >
             Book Your Assessment

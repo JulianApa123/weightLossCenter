@@ -30,7 +30,7 @@ export default function Testimonials() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="/#schedule" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
+              <a href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function Testimonials() {
             Patient Success Stories
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Coming soon...
+            Real transformations from real people who achieved lasting weight loss with our program
           </p>
         </div>
       </section>
@@ -249,7 +249,7 @@ export default function Testimonials() {
             Join hundreds of patients who have transformed their lives with our comprehensive weight loss program.
           </p>
           <Link 
-            href="/#schedule"
+            href="/appointments"
             className="inline-block bg-[#1a2744] text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-[#2a3754] transition"
           >
             Start Your Journey Today

@@ -30,7 +30,7 @@ export default function AboutUs() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="/#schedule" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
+              <a href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
           </div>
@@ -345,7 +345,7 @@ export default function AboutUs() {
             Schedule your comprehensive assessment and take the first step toward lasting weight loss.
           </p>
           <Link 
-            href="/#schedule"
+            href="/appointments"
             className="inline-block bg-white text-[#1a2744] px-12 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition"
           >
             Book Your Assessment

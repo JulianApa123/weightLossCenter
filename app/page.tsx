@@ -67,7 +67,7 @@ export default function Home() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="#schedule" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
+              <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
           </div>
@@ -96,12 +96,12 @@ export default function Home() {
                 Personalized nutritional programs, advanced diagnostic tools, and behavioral health support for those who struggle with weight loss.
               </p>
               <div className="flex gap-4">
-                <a 
-                  href="#schedule"
-                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition cursor-pointer"
+                <Link 
+                  href="/appointments"
+                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition"
                 >
                   Book Your Assessment
-                </a>
+                </Link>
                 <Link 
                   href="/services"
                   className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition"
@@ -415,9 +415,12 @@ export default function Home() {
             <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
               Call Now
             </button>
-            <button className="bg-gray-300 text-gray-700 px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+            <Link 
+              href="/appointments"
+              className="bg-gray-300 text-gray-700 px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition inline-block"
+            >
               Schedule An Appointment
-            </button>
+            </Link>
             <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
               Email Us
             </button>
