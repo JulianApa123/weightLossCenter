@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const totalSlides = 3;
 
   useEffect(() => {
@@ -27,6 +28,10 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   const carouselImages = [
     '/carousel-1.jpg',
     '/carousel-2.jpg',
@@ -47,10 +52,10 @@ export default function Home() {
           <div className="flex items-center justify-between">
             {/* Left Menu Items */}
             <div className="flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 1</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 2</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 3</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 4</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
+              <a href="#about" className="text-gray-700 hover:text-gray-900">About Us</a>
+              <a href="#services" className="text-gray-700 hover:text-gray-900">Services</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-gray-900">Testimonials</a>
             </div>
             
             {/* Center Logo */}
@@ -61,8 +66,8 @@ export default function Home() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 5</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Menu Item 6</a>
+              <a href="#schedule" className="text-gray-700 hover:text-gray-900">Book Appointment</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900">Patient Portal</a>
             </div>
           </div>
         </nav>
@@ -206,53 +211,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Team Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
-          {/* Header */}
-          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
-            Our Team Is Comprised Of<br />The Best
-          </h2>
-
-          {/* Content Grid */}
-          <div className="grid grid-cols-3 gap-16 max-w-6xl mx-auto items-center">
-            {/* Left Side - Stats */}
-            <div className="space-y-8">
-              <div className="w-56 h-56 bg-gray-300 rounded-full flex items-center justify-center mx-auto">
-                <p className="text-center text-gray-700 font-medium px-8">
-                  # Years Of<br />Combined<br />Experience
-                </p>
-              </div>
-              <div className="w-56 h-56 bg-gray-300 rounded-full flex items-center justify-center mx-auto">
-                <p className="text-center text-gray-700 font-medium px-8">
-                  # Combined<br />Patients Treated
-                </p>
-              </div>
-            </div>
-
-            {/* Middle - Team Roles */}
-            <div className="space-y-12 text-center">
-              <h3 className="text-2xl font-semibold text-gray-700">
-                Exercise<br />Physiologists
-              </h3>
-              <h3 className="text-2xl font-semibold text-gray-700">
-                Behavioral<br />Therapists
-              </h3>
-              <h3 className="text-2xl font-semibold text-gray-700">
-                Registered<br />Dietitians
-              </h3>
-            </div>
-
-            {/* Right Side - Treatment Plan Message */}
-            <div className="flex items-center">
-              <h3 className="text-3xl font-bold text-[#1a2744] leading-snug">
-                To Guide You Along A Personalized Treatment Plan
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Our Process Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
@@ -263,51 +221,99 @@ export default function Home() {
 
           {/* Process Flow */}
           <div className="max-w-5xl mx-auto">
-            {/* Initial Assessment + Then Choose One */}
-            <div className="flex items-center gap-8 mb-12">
-              <h3 className="text-3xl font-semibold text-gray-700">
-                Initial<br />Assessment
-              </h3>
-              <p className="text-lg text-[#1a2744]">
-                Then Choose One
+            {/* Step 1 - Initial Assessment */}
+            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+              <div className="flex items-center gap-6 mb-4">
+                <div className="w-12 h-12 bg-[#1a2744] text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                  1
+                </div>
+                <h3 className="text-3xl font-bold text-[#1a2744]">
+                  Initial Assessment
+                </h3>
+              </div>
+              <p className="text-gray-600 ml-18 text-lg">
+                Comprehensive evaluation of your health, medical history, and weight loss goals
               </p>
             </div>
 
-            {/* Programs */}
-            <div className="space-y-8 pl-12">
-              {/* Intensive Weight Loss Program */}
-              <div className="flex items-start gap-16">
-                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
-                  Intensive<br />Weight Loss<br />Program
-                </h3>
-                <ul className="space-y-1 text-base text-gray-700">
-                  <li>• Structured</li>
-                  <li>• Multi-week</li>
-                  <li>• Frequent Appointments</li>
+            {/* Arrow/Divider */}
+            <div className="text-center my-8">
+              <div className="inline-block bg-[#1a2744] text-white px-8 py-3 rounded-full text-lg font-medium">
+                Then Choose One
+              </div>
+            </div>
+
+            {/* Programs Grid */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Intensive Program */}
+              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                  2A
+                </div>
+                <h4 className="text-xl font-bold text-[#1a2744] mb-4">
+                  Intensive Weight Loss Program
+                </h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Structured
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Multi-week
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Frequent Appointments
+                  </li>
                 </ul>
               </div>
 
               {/* Maintenance Program */}
-              <div className="flex items-start gap-16">
-                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
-                  Maintenance<br />Program
-                </h3>
-                <ul className="space-y-1 text-base text-gray-700">
-                  <li>• Monthly/Bi-Weekly Check-ins</li>
-                  <li>• Group Support</li>
-                  <li>• Access To Resources For Long Term Success</li>
+              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                  2B
+                </div>
+                <h4 className="text-xl font-bold text-[#1a2744] mb-4">
+                  Maintenance Program
+                </h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Monthly/Bi-Weekly Check-ins
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Group Support
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Access To Resources For Long Term Success
+                  </li>
                 </ul>
               </div>
 
-              {/* A La Carte Services */}
-              <div className="flex items-start gap-16">
-                <h3 className="text-2xl font-semibold text-gray-700 min-w-[280px] text-right">
-                  A La Carte<br />Services
-                </h3>
-                <ul className="space-y-1 text-base text-gray-700">
-                  <li>• Choose Specific Services</li>
-                  <li>• ...</li>
-                  <li>• ...</li>
+              {/* A La Carte */}
+              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                  2C
+                </div>
+                <h4 className="text-xl font-bold text-[#1a2744] mb-4">
+                  A La Carte Services
+                </h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Choose Specific Services
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Flexible scheduling
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2">•</span>
+                    Pay as you go
+                  </li>
                 </ul>
               </div>
             </div>
@@ -327,23 +333,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
             {/* Card 1 */}
             <div>
-              <div className="bg-gray-300 rounded-lg h-96 mb-6"></div>
+              <div className="bg-gray-300 rounded-lg h-96 mb-6 flex items-center justify-center">
+                <p className="text-3xl text-gray-600 font-medium">Coming soon...</p>
+              </div>
               <p className="text-2xl text-gray-700 font-medium text-center">Name</p>
             </div>
 
             {/* Card 2 */}
             <div>
-              <div className="bg-gray-300 rounded-lg h-96 mb-6"></div>
+              <div className="bg-gray-300 rounded-lg h-96 mb-6 flex items-center justify-center">
+                <p className="text-3xl text-gray-600 font-medium">Coming soon...</p>
+              </div>
               <p className="text-2xl text-gray-700 font-medium text-center">Name</p>
             </div>
           </div>
 
           {/* Carousel Dots */}
           <div className="flex justify-center gap-3 mb-12">
-            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
-            <div className="w-4 h-4 bg-gray-600 rounded-full"></div>
-            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
-            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
+            <button 
+              onClick={() => setCurrentSlide(0)}
+              className={`w-4 h-4 rounded-full transition ${currentSlide === 0 ? 'bg-gray-600' : 'bg-gray-300'} hover:bg-gray-500`}
+              aria-label="Go to testimonial 1"
+            ></button>
+            <button 
+              onClick={() => setCurrentSlide(1)}
+              className={`w-4 h-4 rounded-full transition ${currentSlide === 1 ? 'bg-gray-600' : 'bg-gray-300'} hover:bg-gray-500`}
+              aria-label="Go to testimonial 2"
+            ></button>
+            <button 
+              onClick={() => setCurrentSlide(2)}
+              className={`w-4 h-4 rounded-full transition ${currentSlide === 2 ? 'bg-gray-600' : 'bg-gray-300'} hover:bg-gray-500`}
+              aria-label="Go to testimonial 3"
+            ></button>
           </div>
 
           {/* CTA Button */}
@@ -366,13 +387,19 @@ export default function Home() {
           {/* Icons */}
           <div className="grid grid-cols-3 gap-16 max-w-4xl mx-auto mb-16">
             <div className="flex justify-center">
-              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-8xl">📞</span>
+              </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-8xl">📅</span>
+              </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-48 h-48 bg-gray-300 rounded-full"></div>
+              <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-8xl">✉️</span>
+              </div>
             </div>
           </div>
 
@@ -400,45 +427,85 @@ export default function Home() {
           </h2>
 
           {/* FAQ Items */}
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4">
             {/* FAQ 1 */}
-            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
-              <p className="text-2xl text-gray-600 pr-8">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
-              </p>
-              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
-                +
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <button 
+                onClick={() => toggleFaq(0)}
+                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
+              >
+                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
+                  What makes your weight loss program different from others?
+                </p>
+                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 0 ? 'rotate-45' : ''}`}>
+                  +
+                </div>
               </button>
+              {openFaq === 0 && (
+                <div className="px-6 pb-6 text-gray-600">
+                  <p>Our program is medically supervised and personalized to your specific health needs, medical history, and weight loss goals. Unlike one-size-fits-all programs, we address underlying medical barriers and provide ongoing professional support.</p>
+                </div>
+              )}
             </div>
 
             {/* FAQ 2 */}
-            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
-              <p className="text-2xl text-gray-600 pr-8">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
-              </p>
-              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
-                +
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <button 
+                onClick={() => toggleFaq(1)}
+                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
+              >
+                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
+                  How long does the program take?
+                </p>
+                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 1 ? 'rotate-45' : ''}`}>
+                  +
+                </div>
               </button>
+              {openFaq === 1 && (
+                <div className="px-6 pb-6 text-gray-600">
+                  <p>Program length varies based on your individual goals and which program you choose. Our Intensive Weight Loss Program typically runs 12-16 weeks, while our Maintenance Program is ongoing with monthly or bi-weekly check-ins.</p>
+                </div>
+              )}
             </div>
 
             {/* FAQ 3 */}
-            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
-              <p className="text-2xl text-gray-600 pr-8">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
-              </p>
-              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
-                +
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <button 
+                onClick={() => toggleFaq(2)}
+                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
+              >
+                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
+                  Do you accept insurance?
+                </p>
+                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 2 ? 'rotate-45' : ''}`}>
+                  +
+                </div>
               </button>
+              {openFaq === 2 && (
+                <div className="px-6 pb-6 text-gray-600">
+                  <p>We work with most major insurance providers. Coverage varies by plan and specific services. Contact us for a free consultation to discuss your insurance coverage and payment options.</p>
+                </div>
+              )}
             </div>
 
             {/* FAQ 4 */}
-            <div className="flex items-center justify-between bg-transparent py-6 border-b border-gray-300">
-              <p className="text-2xl text-gray-600 pr-8">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
-              </p>
-              <button className="flex-shrink-0 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-3xl text-gray-600 hover:bg-gray-400 transition">
-                +
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <button 
+                onClick={() => toggleFaq(3)}
+                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
+              >
+                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
+                  What can I expect during the initial assessment?
+                </p>
+                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 3 ? 'rotate-45' : ''}`}>
+                  +
+                </div>
               </button>
+              {openFaq === 3 && (
+                <div className="px-6 pb-6 text-gray-600">
+                  <p>Your initial comprehensive assessment includes a full medical evaluation, review of your health history, body composition analysis, metabolic testing, and a consultation with our physician to create your personalized treatment plan.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -457,69 +524,125 @@ export default function Home() {
             {/* Left Side - Address and Buttons */}
             <div className="space-y-8">
               <div className="text-2xl text-gray-700">
-                1234 Street Avenue<br />
-                12345, City, State
+                18255 Brookhurst St.<br />
+                Suite 100<br />
+                Fountain Valley, CA 92708
               </div>
               
               <div className="space-y-4">
-                <button className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition">
+                <a 
+                  href="https://maps.apple.com/?address=18255%20Brookhurst%20St,%20Suite%20100,%20Fountain%20Valley,%20CA%2092708"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition block text-center"
+                >
                   Open In Apple Maps
-                </button>
-                <button className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition">
+                </a>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=18255+Brookhurst+St+Suite+100+Fountain+Valley+CA+92708"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gray-300 text-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-400 transition block text-center"
+                >
                   Open In Google Maps
-                </button>
+                </a>
               </div>
             </div>
 
-            {/* Right Side - Map Placeholder */}
-            <div className="bg-gray-300 rounded-lg h-96"></div>
+            {/* Right Side - Embedded Google Map */}
+            <div className="rounded-lg overflow-hidden h-96 shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.0849364371887!2d-117.95624!3d33.71167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd28b0a1b1f1f1%3A0x1!2s18255%20Brookhurst%20St%20%23100%2C%20Fountain%20Valley%2C%20CA%2092708!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lumena Clinic Location"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-12 border-t border-gray-300">
+      <footer className="bg-[#1a2744] text-white py-12">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-3 gap-8 items-start mb-8">
-            {/* Left - Logo */}
+          {/* Main Footer Content */}
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Column 1 - Logo & About */}
             <div>
-              <div className="w-24 h-24 bg-gray-300 rounded-full"></div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-white rounded-full"></div>
+                <span className="text-xl font-semibold">Lumena Clinic</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
+              </p>
             </div>
 
-            {/* Center - Navigation */}
-            <div className="space-y-6">
-              {/* First Row */}
-              <div className="grid grid-cols-4 gap-4 text-gray-700">
-                <a href="#" className="hover:text-[#1a2744]">Page 1</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 2</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 3</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 4</a>
-              </div>
-              {/* Second Row */}
-              <div className="grid grid-cols-4 gap-4 text-gray-700">
-                <a href="#" className="hover:text-[#1a2744]">Page 5</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 6</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 7</a>
-                <a href="#" className="hover:text-[#1a2744]">Page 8</a>
-              </div>
+            {/* Column 2 - Quick Links */}
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li><a href="#" className="hover:text-white transition">Home</a></li>
+                <li><a href="#" className="hover:text-white transition">About Us</a></li>
+                <li><a href="#" className="hover:text-white transition">Services</a></li>
+                <li><a href="#" className="hover:text-white transition">Testimonials</a></li>
+              </ul>
             </div>
 
-            {/* Right - Social Icons */}
-            <div className="flex justify-end gap-6">
-              <a href="#" className="text-4xl hover:opacity-70">📷</a>
-              <a href="#" className="text-4xl hover:opacity-70">f</a>
-              <a href="#" className="text-4xl hover:opacity-70">🎵</a>
-              <a href="#" className="text-4xl hover:opacity-70">in</a>
+            {/* Column 3 - Contact Info */}
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
+              <ul className="space-y-3 text-gray-300 text-sm">
+                <li className="flex items-start">
+                  <span className="mr-2">📍</span>
+                  <span>18255 Brookhurst St., Suite 100<br />Fountain Valley, CA 92708</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">📞</span>
+                  <a href="tel:555-123-4567" className="hover:text-white transition">(555) 123-4567</a>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">✉️</span>
+                  <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4 - Hours */}
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Office Hours</h4>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>Monday - Friday: 9am - 6pm</li>
+                <li>Saturday: 10am - 2pm</li>
+                <li>Sunday: Closed</li>
+              </ul>
+              {/* Social Icons */}
+              <div className="mt-6">
+                <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
+                <div className="flex gap-4">
+                  <a href="#" className="text-2xl hover:opacity-70 transition">📘</a>
+                  <a href="#" className="text-2xl hover:opacity-70 transition">📷</a>
+                  <a href="#" className="text-2xl hover:opacity-70 transition">🔗</a>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Bottom Row - Copyright and Legal */}
-          <div className="flex justify-between items-center pt-8 border-t border-gray-300">
-            <p className="text-gray-600">2025 Lumena Clinic Inc</p>
-            <div className="flex gap-8 text-gray-600">
-              <a href="#" className="hover:text-[#1a2744]">Terms of Use</a>
-              <a href="#" className="hover:text-[#1a2744]">Privacy Policy</a>
-              <a href="#" className="hover:text-[#1a2744]">Notice of Privacy Practices</a>
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-600 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm">
+                © 2025 Lumena Clinic Inc. All rights reserved.
+              </p>
+              <div className="flex gap-6 text-gray-400 text-sm">
+                <a href="#" className="hover:text-white transition">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition">Terms of Use</a>
+                <a href="#" className="hover:text-white transition">Notice of Privacy Practices</a>
+              </div>
             </div>
           </div>
         </div>
