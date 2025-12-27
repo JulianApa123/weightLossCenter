@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,7 +54,7 @@ export default function Home() {
             {/* Left Menu Items */}
             <div className="flex space-x-8">
               <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
-              <a href="#about" className="text-gray-700 hover:text-gray-900">About Us</a>
+              <Link href="/about" className="text-gray-700 hover:text-gray-900">About Us</Link>
               <a href="#services" className="text-gray-700 hover:text-gray-900">Services</a>
               <a href="#testimonials" className="text-gray-700 hover:text-gray-900">Testimonials</a>
             </div>
