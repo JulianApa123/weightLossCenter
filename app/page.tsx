@@ -53,10 +53,10 @@ export default function Home() {
           <div className="flex items-center justify-between">
             {/* Left Menu Items */}
             <div className="flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
-              <Link href="/about" className="text-gray-700 hover:text-gray-900">About Us</Link>
-              <a href="#services" className="text-gray-700 hover:text-gray-900">Services</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-gray-900">Testimonials</a>
+              <a href="#" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Home</a>
+              <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
+              <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
+              <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
             </div>
             
             {/* Center Logo */}
@@ -67,8 +67,8 @@ export default function Home() {
             
             {/* Right Menu Items */}
             <div className="flex space-x-8">
-              <a href="#schedule" className="text-gray-700 hover:text-gray-900">Book Appointment</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Patient Portal</a>
+              <a href="#schedule" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</a>
+              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
           </div>
         </nav>
