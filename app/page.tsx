@@ -96,12 +96,18 @@ export default function Home() {
                 Personalized nutritional programs, advanced diagnostic tools, and behavioral health support for those who struggle with weight loss.
               </p>
               <div className="flex gap-4">
-                <button className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400">
-                  Button 1
-                </button>
-                <button className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400">
-                  Button 2
-                </button>
+                <a 
+                  href="#schedule"
+                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition cursor-pointer"
+                >
+                  Book Your Assessment
+                </a>
+                <Link 
+                  href="/services"
+                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition"
+                >
+                  View Our Services
+                </Link>
               </div>
             </div>
           </div>
@@ -378,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* Schedule CTA Section */}
-      <section className="py-20 bg-white border-b-2 border-gray-800">
+      <section id="schedule" className="py-20 bg-white border-b-2 border-gray-800">
         <div className="container mx-auto px-6">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
