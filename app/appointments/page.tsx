@@ -153,7 +153,7 @@ export default function Appointments() {
             {/* Desktop Right Menu Items */}
             <div className="hidden md:flex space-x-8">
               <Link href="/appointments" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Book Appointment</Link>
-              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
+              <Link href="/patient-portal" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
             </div>
 
             {/* Mobile Book Appointment Button */}
@@ -170,7 +170,7 @@ export default function Appointments() {
               <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
               <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
               <Link href="/appointments" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">Book Appointment</Link>
-              <a href="#" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</a>
+              <Link href="/patient-portal" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
             </div>
           )}
         </nav>
