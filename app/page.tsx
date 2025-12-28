@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const totalSlides = 3;
 
   useEffect(() => {
@@ -48,11 +49,25 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header/Navigation */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <nav className="container mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            {/* Left Menu Items */}
-            <div className="flex space-x-8">
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-gray-700 hover:text-gray-900"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+
+            {/* Desktop Left Menu Items */}
+            <div className="hidden md:flex space-x-8">
               <a href="#" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Home</a>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
@@ -61,24 +76,41 @@ export default function Home() {
             
             {/* Center Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lumena Clinic</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
             </div>
             
-            {/* Right Menu Items */}
-            <div className="flex space-x-8">
+            {/* Desktop Right Menu Items */}
+            <div className="hidden md:flex space-x-8">
               <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
+
+            {/* Mobile Book Appointment Button */}
+            <Link href="/appointments" className="md:hidden bg-[#1a2744] text-white px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+              Book
+            </Link>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
+              <a href="#" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">Home</a>
+              <Link href="/about" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">About Us</Link>
+              <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
+              <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
+              <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
+              <a href="#" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</a>
+            </div>
+          )}
         </nav>
       </header>
 
       {/* Hero Section */}
       <section className="bg-white">
-        <div className="grid grid-cols-2 h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[400px] md:h-[600px]">
           {/* Left Side - Image */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden h-[300px] md:h-auto">
             <img 
               src="/hero-image.jpg" 
               alt="Weight Loss Consultation"
@@ -87,24 +119,24 @@ export default function Home() {
           </div>
           
           {/* Right Side - Content */}
-          <div className="flex items-center justify-center px-16">
+          <div className="flex items-center justify-center px-6 md:px-16 py-12 md:py-0">
             <div className="max-w-xl animate-fade-in">
-              <h1 className="text-5xl font-bold text-[#1a2744] mb-8 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-6 md:mb-8 leading-tight">
                 Achieve Lasting Weight Loss With Medical Expertise
               </h1>
-              <p className="text-lg text-gray-600 mb-12 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-12 leading-relaxed">
                 Personalized nutritional programs, advanced diagnostic tools, and behavioral health support for those who struggle with weight loss.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   href="/appointments"
-                  className="bg-[#1a2744] text-white px-8 py-4 rounded-full hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-semibold"
+                  className="bg-[#1a2744] text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-semibold text-center"
                 >
                   Book Your Assessment
                 </Link>
                 <Link 
                   href="/services"
-                  className="bg-gray-200 text-gray-700 px-8 py-4 rounded-full hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 font-semibold"
+                  className="bg-gray-200 text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 font-semibold text-center"
                 >
                   View Our Services
                 </Link>
@@ -129,7 +161,7 @@ export default function Home() {
           </div>
 
           {/* Three Columns */}
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto stagger-children">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto stagger-children">
             {/* Column 1 */}
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
@@ -392,7 +424,7 @@ export default function Home() {
           </h2>
 
           {/* Icons */}
-          <div className="grid grid-cols-3 gap-16 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto mb-16">
             <div className="flex justify-center">
               <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
                 <span className="text-8xl">📞</span>
@@ -530,7 +562,7 @@ export default function Home() {
           </h2>
 
           {/* Map Container */}
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-start">
             {/* Left Side - Address and Buttons */}
             <div className="space-y-8">
               <div className="text-2xl text-gray-700">
@@ -569,7 +601,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lumena Clinic Location"
+                title="Lunena Clinic and Therapeutics Location"
               ></iframe>
             </div>
           </div>
@@ -585,7 +617,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lumena Clinic</span>
+                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
@@ -646,7 +678,7 @@ export default function Home() {
           <div className="border-t border-gray-600 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2025 Lumena Clinic Inc. All rights reserved.
+                © 2025 Lunena Clinic and Therapeutics Inc. All rights reserved.
               </p>
               <div className="flex gap-6 text-gray-400 text-sm">
                 <a href="#" className="hover:text-white transition">Privacy Policy</a>
