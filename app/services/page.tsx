@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Services() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -40,10 +41,10 @@ export default function Services() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Our Services & Programs
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive, evidence-based weight management solutions tailored to your unique needs
           </p>
         </div>
@@ -54,10 +55,10 @@ export default function Services() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#1a2744] mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-4">
                 Initial Comprehensive Assessment
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base md:text-xl text-gray-600">
                 Your journey begins with a thorough evaluation to create your personalized treatment plan
               </p>
             </div>
@@ -142,7 +143,7 @@ export default function Services() {
       {/* Core Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Our Core Services
           </h2>
 
@@ -152,7 +153,7 @@ export default function Services() {
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">⚕️</div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#1a2744] mb-4">
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Medical Evaluation & Management
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -194,7 +195,7 @@ export default function Services() {
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">🥗</div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#1a2744] mb-4">
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Personalized Nutritional Programs
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -236,7 +237,7 @@ export default function Services() {
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">💪</div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#1a2744] mb-4">
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Structured Exercise Programs
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -278,7 +279,7 @@ export default function Services() {
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">🧠</div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#1a2744] mb-4">
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Behavioral Health Support
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -322,25 +323,25 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1a2744] mb-6 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
               Choose Your Program
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
               We offer flexible program options to meet your unique needs and level of commitment
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 stagger-children">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 stagger-children">
               {/* Intensive Program */}
               <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg p-8 border-2 border-blue-200">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
                     Intensive Weight Loss Program
                   </h3>
                   <p className="text-gray-600">For significant, structured weight loss</p>
                 </div>
                 
                 <div className="mb-6">
-                  <div className="text-4xl font-bold text-[#1a2744] mb-2">
+                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
                     $6,500
                   </div>
                   <p className="text-gray-600">52-week program + medication costs</p>
@@ -389,14 +390,14 @@ export default function Services() {
               {/* Maintenance Program */}
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
                     Maintenance Program
                   </h3>
                   <p className="text-gray-600">For long-term success support</p>
                 </div>
                 
                 <div className="mb-6">
-                  <div className="text-4xl font-bold text-[#1a2744] mb-2">
+                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
                     Custom
                   </div>
                   <p className="text-gray-600">Monthly or bi-monthly visits</p>
@@ -444,14 +445,14 @@ export default function Services() {
               {/* A La Carte */}
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
                     A La Carte Services
                   </h3>
                   <p className="text-gray-600">Flexible, targeted support</p>
                 </div>
                 
                 <div className="mb-6">
-                  <div className="text-4xl font-bold text-[#1a2744] mb-2">
+                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
                     Varies
                   </div>
                   <p className="text-gray-600">Choose specific services</p>
@@ -504,7 +505,7 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-3xl font-bold text-[#1a2744] mb-6 text-center">
+            <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-6 text-center">
               Bariatric Surgery Support
             </h2>
             <p className="text-lg text-gray-700 mb-6 text-center">

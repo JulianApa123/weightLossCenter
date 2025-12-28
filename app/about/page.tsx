@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function AboutUs() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -40,10 +42,10 @@ export default function AboutUs() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             About Lunena Clinic and Therapeutics
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Expert medical weight loss care dedicated to your long-term success
           </p>
         </div>
@@ -53,7 +55,7 @@ export default function AboutUs() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1a2744] mb-8 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-8 text-center">
               Our Story
             </h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
@@ -82,21 +84,21 @@ export default function AboutUs() {
       {/* Meet Our Team Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Meet Our Team
           </h2>
 
           {/* Lead Physician */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="grid md:grid-cols-2 gap-12 items-center bg-white rounded-lg shadow-md p-8 hover-lift">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
                 <p className="text-gray-500">[Doctor Photo]</p>
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-[#1a2744] mb-2">
+                <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-2">
                   Dr. [Name], MD
                 </h3>
-                <p className="text-xl text-gray-600 mb-4">Medical Director</p>
+                <p className="text-base md:text-xl text-gray-600 mb-4">Medical Director</p>
                 <div className="space-y-4 text-gray-700">
                   <p>
                     Board-certified in [Specialty] with over [X] years of experience in medical 
@@ -121,10 +123,10 @@ export default function AboutUs() {
 
           {/* Support Team */}
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-2xl font-bold text-[#1a2744] mb-8 text-center">
+            <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-8 text-center">
               Our Support Team
             </h3>
-            <div className="grid md:grid-cols-3 gap-8 stagger-children">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 stagger-children">
               {/* Registered Dietitian */}
               <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -172,7 +174,7 @@ export default function AboutUs() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1a2744] mb-12 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-12 text-center">
               Our Concierge Approach
             </h2>
             <div className="mb-12 text-center max-w-3xl mx-auto">
@@ -186,7 +188,7 @@ export default function AboutUs() {
               {/* Evidence-Based */}
               <div className="bg-gray-50 rounded-lg p-8">
                 <div className="text-4xl mb-4">🔬</div>
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-4">Evidence-Based</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Evidence-Based</h3>
                 <p className="text-gray-700">
                   Our treatments are grounded in the latest medical research and proven clinical outcomes. 
                   We utilize advanced diagnostics including DEXA scans and metabolic testing to inform 
@@ -197,7 +199,7 @@ export default function AboutUs() {
               {/* Personalized */}
               <div className="bg-gray-50 rounded-lg p-8">
                 <div className="text-4xl mb-4">👤</div>
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-4">Highly Personalized</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Highly Personalized</h3>
                 <p className="text-gray-700">
                   Every treatment plan is customized based on your comprehensive initial assessment, 
                   including medical history, body composition, metabolism, and psychological factors.
@@ -207,7 +209,7 @@ export default function AboutUs() {
               {/* Comprehensive */}
               <div className="bg-gray-50 rounded-lg p-8">
                 <div className="text-4xl mb-4">🎯</div>
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-4">Multidisciplinary Care</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Multidisciplinary Care</h3>
                 <p className="text-gray-700">
                   All specialists under one roof—physicians, registered dietitians, exercise physiologists, 
                   and behavioral therapists—working together on your customized plan.
@@ -217,7 +219,7 @@ export default function AboutUs() {
               {/* Supportive */}
               <div className="bg-gray-50 rounded-lg p-8">
                 <div className="text-4xl mb-4">🤝</div>
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-4">Enhanced Access</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Enhanced Access</h3>
                 <p className="text-gray-700">
                   Direct phone and email access to your care team, expedited appointments, longer 
                   consultations, and a dedicated care coordinator to streamline your entire experience.
@@ -232,10 +234,10 @@ export default function AboutUs() {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1a2744] mb-6 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
               The Concierge Difference
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
               Our membership-based concierge model ensures you receive premium, highly personalized 
               care with unparalleled access to our team.
             </p>
@@ -243,7 +245,7 @@ export default function AboutUs() {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {/* What's Included */}
               <div className="bg-white rounded-lg shadow-md p-8">
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-6">Membership Includes:</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-6">Membership Includes:</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-3 mt-1">✓</span>
@@ -278,7 +280,7 @@ export default function AboutUs() {
 
               {/* Benefits */}
               <div className="bg-white rounded-lg shadow-md p-8">
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-6">Your Benefits:</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-6">Your Benefits:</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-3 mt-1">★</span>

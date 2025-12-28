@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Appointments() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -65,10 +66,10 @@ export default function Appointments() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Schedule Your Appointment
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Take the first step toward lasting weight loss. Book your comprehensive assessment today.
           </p>
         </div>
@@ -77,10 +78,10 @@ export default function Appointments() {
       {/* Main Content */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
             {/* Left Side - Form */}
             <div className="bg-gray-50 rounded-lg p-8 shadow-md">
-              <h2 className="text-3xl font-bold text-[#1a2744] mb-6">
+              <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-6">
                 Request an Appointment
               </h2>
               <p className="text-gray-600 mb-8">
@@ -89,7 +90,7 @@ export default function Appointments() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
                       First Name *
@@ -172,7 +173,7 @@ export default function Appointments() {
                 </div>
 
                 {/* Date and Time */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
                       Preferred Date *
@@ -284,7 +285,7 @@ export default function Appointments() {
 
               {/* What to Expect Card */}
               <div className="bg-gray-50 rounded-lg p-8 shadow-md">
-                <h3 className="text-2xl font-bold text-[#1a2744] mb-6">What to Expect</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-6">What to Expect</h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-3 mt-1 text-xl">✓</span>
@@ -333,7 +334,7 @@ export default function Appointments() {
       {/* Map Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1a2744] mb-8 text-center">
+          <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-8 text-center">
             Visit Our Clinic
           </h2>
           <div className="max-w-4xl mx-auto">

@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Testimonials() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -40,10 +41,10 @@ export default function Testimonials() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Patient Success Stories
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Real transformations from real people who achieved lasting weight loss with our program
           </p>
         </div>
@@ -52,11 +53,11 @@ export default function Testimonials() {
       {/* Featured Success Stories */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Featured Success Stories
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
             {/* Featured Story 1 */}
             <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-300 h-96 flex items-center justify-center">
@@ -103,11 +104,11 @@ export default function Testimonials() {
       {/* Video Testimonials */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Video Testimonials
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* Video 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-800 h-64 flex items-center justify-center">
@@ -156,11 +157,11 @@ export default function Testimonials() {
       {/* Written Testimonials Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             What Our Patients Say
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="bg-gray-50 rounded-lg p-6 shadow-md hover-lift">
                 <div className="text-yellow-500 text-2xl mb-4">★★★★★</div>
@@ -211,14 +212,14 @@ export default function Testimonials() {
       {/* Before/After Gallery */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-6 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
             Transformation Gallery
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             See the incredible transformations of our patients (with their permission)
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
                 <div className="grid grid-cols-2">
@@ -242,10 +243,10 @@ export default function Testimonials() {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-[#1a2744] mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Join hundreds of patients who have transformed their lives with our comprehensive weight loss program.
           </p>
           <Link 
