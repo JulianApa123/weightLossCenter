@@ -39,7 +39,7 @@ export default function Services() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
             Our Services & Programs
           </h1>
@@ -63,7 +63,7 @@ export default function Services() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">🩺</span>
                   Medical Evaluation
@@ -75,7 +75,7 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">📊</span>
                   Body Composition Analysis
@@ -87,7 +87,7 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">🔥</span>
                   Metabolic Testing
@@ -99,7 +99,7 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">🥗</span>
                   Nutritional Assessment
@@ -111,7 +111,7 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">💪</span>
                   Exercise Readiness
@@ -123,7 +123,7 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
                   <span className="text-3xl mr-3">🧠</span>
                   Psychological Assessment
@@ -148,7 +148,7 @@ export default function Services() {
 
           <div className="max-w-6xl mx-auto space-y-12">
             {/* Medical Management */}
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">⚕️</div>
                 <div>
@@ -190,7 +190,7 @@ export default function Services() {
             </div>
 
             {/* Nutritional Programs */}
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">🥗</div>
                 <div>
@@ -232,7 +232,7 @@ export default function Services() {
             </div>
 
             {/* Exercise Programs */}
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">💪</div>
                 <div>
@@ -274,7 +274,7 @@ export default function Services() {
             </div>
 
             {/* Behavioral Health */}
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
                 <div className="text-6xl flex-shrink-0">🧠</div>
                 <div>
@@ -329,7 +329,7 @@ export default function Services() {
               We offer flexible program options to meet your unique needs and level of commitment
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 stagger-children">
               {/* Intensive Program */}
               <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg p-8 border-2 border-blue-200">
                 <div className="text-center mb-6">

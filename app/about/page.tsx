@@ -39,7 +39,7 @@ export default function AboutUs() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
             About Lumena Clinic
           </h1>
@@ -88,7 +88,7 @@ export default function AboutUs() {
 
           {/* Lead Physician */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="grid md:grid-cols-2 gap-12 items-center bg-white rounded-lg shadow-md p-8">
+            <div className="grid md:grid-cols-2 gap-12 items-center bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
                 <p className="text-gray-500">[Doctor Photo]</p>
               </div>
@@ -124,9 +124,9 @@ export default function AboutUs() {
             <h3 className="text-2xl font-bold text-[#1a2744] mb-8 text-center">
               Our Support Team
             </h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 stagger-children">
               {/* Registered Dietitian */}
-              <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-5xl">🥗</span>
                 </div>
@@ -139,7 +139,7 @@ export default function AboutUs() {
               </div>
 
               {/* Behavioral Therapist */}
-              <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-5xl">🧠</span>
                 </div>
@@ -152,7 +152,7 @@ export default function AboutUs() {
               </div>
 
               {/* Exercise Physiologist */}
-              <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-5xl">💪</span>
                 </div>

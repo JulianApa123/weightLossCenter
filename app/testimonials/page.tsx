@@ -39,7 +39,7 @@ export default function Testimonials() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
             Patient Success Stories
           </h1>
@@ -58,7 +58,7 @@ export default function Testimonials() {
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Featured Story 1 */}
-            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-300 h-96 flex items-center justify-center">
                 <p className="text-3xl text-gray-500 font-medium">Coming Soon...</p>
               </div>
@@ -78,7 +78,7 @@ export default function Testimonials() {
             </div>
 
             {/* Featured Story 2 */}
-            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-300 h-96 flex items-center justify-center">
                 <p className="text-3xl text-gray-500 font-medium">Coming Soon...</p>
               </div>
@@ -109,7 +109,7 @@ export default function Testimonials() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Video 1 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-800 h-64 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">▶️</div>
@@ -123,7 +123,7 @@ export default function Testimonials() {
             </div>
 
             {/* Video 2 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-800 h-64 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">▶️</div>
@@ -137,7 +137,7 @@ export default function Testimonials() {
             </div>
 
             {/* Video 3 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-800 h-64 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">▶️</div>
@@ -162,7 +162,7 @@ export default function Testimonials() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-6 shadow-md">
+              <div key={i} className="bg-gray-50 rounded-lg p-6 shadow-md hover-lift">
                 <div className="text-yellow-500 text-2xl mb-4">★★★★★</div>
                 <p className="text-gray-700 italic mb-4">
                   "Patient testimonial will go here. This will be their story about how the program helped them achieve their weight loss goals..."
@@ -220,7 +220,7 @@ export default function Testimonials() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md">
+              <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
                 <div className="grid grid-cols-2">
                   <div className="bg-gray-300 h-64 flex items-center justify-center border-r-2 border-white">
                     <p className="text-gray-500 font-medium">Before</p>

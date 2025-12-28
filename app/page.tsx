@@ -88,7 +88,7 @@ export default function Home() {
           
           {/* Right Side - Content */}
           <div className="flex items-center justify-center px-16">
-            <div className="max-w-xl">
+            <div className="max-w-xl animate-fade-in">
               <h1 className="text-5xl font-bold text-[#1a2744] mb-8 leading-tight">
                 Achieve Lasting Weight Loss With Medical Expertise
               </h1>
@@ -98,13 +98,13 @@ export default function Home() {
               <div className="flex gap-4">
                 <Link 
                   href="/appointments"
-                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition"
+                  className="bg-[#1a2744] text-white px-8 py-4 rounded-full hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-semibold"
                 >
                   Book Your Assessment
                 </Link>
                 <Link 
                   href="/services"
-                  className="bg-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-400 transition"
+                  className="bg-gray-200 text-gray-700 px-8 py-4 rounded-full hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 font-semibold"
                 >
                   View Our Services
                 </Link>
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
 
           {/* Three Columns */}
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto stagger-children">
             {/* Column 1 */}
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
@@ -253,7 +253,7 @@ export default function Home() {
             {/* Programs Grid */}
             <div className="grid md:grid-cols-3 gap-6">
               {/* Intensive Program */}
-              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+              <div className="bg-white rounded-lg shadow-md p-6 hover-lift">
                 <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   2A
                 </div>
@@ -277,7 +277,7 @@ export default function Home() {
               </div>
 
               {/* Maintenance Program */}
-              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+              <div className="bg-white rounded-lg shadow-md p-6 hover-lift">
                 <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   2B
                 </div>
@@ -301,7 +301,7 @@ export default function Home() {
               </div>
 
               {/* A La Carte */}
-              <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+              <div className="bg-white rounded-lg shadow-md p-6 hover-lift">
                 <div className="w-12 h-12 bg-blue-100 text-[#1a2744] rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   2C
                 </div>

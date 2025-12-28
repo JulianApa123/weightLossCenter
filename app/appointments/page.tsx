@@ -64,7 +64,7 @@ export default function Appointments() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-5xl font-bold text-[#1a2744] mb-6">
             Schedule Your Appointment
           </h1>
@@ -223,7 +223,7 @@ export default function Appointments() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#1a2744] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#2a3754] transition"
+                  className="w-full bg-[#1a2744] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                   Request Appointment
                 </button>
