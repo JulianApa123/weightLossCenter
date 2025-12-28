@@ -62,7 +62,7 @@ export default function Home() {
             {/* Center Logo */}
             <div className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lumena Clinic</span>
+              <span className="text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
             </div>
             
             {/* Right Menu Items */}
@@ -569,7 +569,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lumena Clinic Location"
+                title="Lunena Clinic and Therapeutics Location"
               ></iframe>
             </div>
           </div>
@@ -585,7 +585,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lumena Clinic</span>
+                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
@@ -617,7 +617,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center">
                   <span className="mr-2">✉️</span>
-                  <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
+                  <a href="mailto:info@lunenaclinic.com" className="hover:text-white transition">info@lunenaclinic.com</a>
                 </li>
               </ul>
             </div>
@@ -646,7 +646,7 @@ export default function Home() {
           <div className="border-t border-gray-600 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2025 Lumena Clinic Inc. All rights reserved.
+                © 2025 Lunena Clinic and Therapeutics All rights reserved.
               </p>
               <div className="flex gap-6 text-gray-400 text-sm">
                 <a href="#" className="hover:text-white transition">Privacy Policy</a>
