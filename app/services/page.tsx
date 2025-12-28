@@ -10,7 +10,7 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="bg-white border-b border-gray-200">
         <nav className="container mx-auto px-6 py-6">
@@ -26,7 +26,7 @@ export default function Services() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900 truncate">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
             </Link>
             
             {/* Right Menu Items */}
@@ -39,21 +39,21 @@ export default function Services() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Our Services & Programs
           </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
             Comprehensive, evidence-based weight management solutions tailored to your unique needs
           </p>
         </div>
       </section>
 
       {/* Initial Assessment Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto w-full">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-4">
                 Initial Comprehensive Assessment
@@ -141,8 +141,8 @@ export default function Services() {
       </section>
 
       {/* Core Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Our Core Services
           </h2>
@@ -320,13 +320,13 @@ export default function Services() {
       </section>
 
       {/* Program Tiers Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-6xl mx-auto w-full">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
               Choose Your Program
             </h2>
-            <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto w-full">
               We offer flexible program options to meet your unique needs and level of commitment
             </p>
 
@@ -502,8 +502,8 @@ export default function Services() {
       </section>
 
       {/* Bariatric Support Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
             <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-6 text-center">
               Bariatric Surgery Support
@@ -561,10 +561,10 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#1a2744] text-white">
+      <section className="py-12 md:py-20 bg-[#1a2744] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Health?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto w-full">
             Schedule your comprehensive assessment and discover which program is right for you.
           </p>
           <Link 
@@ -578,14 +578,14 @@ export default function Services() {
 
       {/* Footer */}
       <footer className="bg-[#1a2744] text-white py-12 border-t border-gray-700">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.

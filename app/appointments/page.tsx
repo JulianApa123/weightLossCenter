@@ -35,7 +35,7 @@ export default function Appointments() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="bg-white border-b border-gray-200">
         <nav className="container mx-auto px-6 py-6">
@@ -51,7 +51,7 @@ export default function Appointments() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900 truncate">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
             </Link>
             
             {/* Right Menu Items */}
@@ -64,21 +64,21 @@ export default function Appointments() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Schedule Your Appointment
           </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
             Take the first step toward lasting weight loss. Book your comprehensive assessment today.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto w-full">
             {/* Left Side - Form */}
             <div className="bg-gray-50 rounded-lg p-8 shadow-md">
               <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-6">
@@ -332,12 +332,12 @@ export default function Appointments() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-8 text-center">
             Visit Our Clinic
           </h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto w-full">
             <div className="rounded-lg overflow-hidden shadow-lg h-96">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.0849364371887!2d-117.95624!3d33.71167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd28b0a1b1f1f1%3A0x1!2s18255%20Brookhurst%20St%20%23100%2C%20Fountain%20Valley%2C%20CA%2092708!5e0!3m2!1sen!2sus!4v1234567890"
@@ -374,14 +374,14 @@ export default function Appointments() {
 
       {/* Footer */}
       <footer className="bg-[#1a2744] text-white py-12">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.

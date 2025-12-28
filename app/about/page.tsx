@@ -11,7 +11,7 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="bg-white border-b border-gray-200">
         <nav className="container mx-auto px-6 py-6">
@@ -27,7 +27,7 @@ export default function AboutUs() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900 truncate">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
             </Link>
             
             {/* Right Menu Items */}
@@ -40,21 +40,21 @@ export default function AboutUs() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             About Lunena Clinic and Therapeutics
           </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
             Expert medical weight loss care dedicated to your long-term success
           </p>
         </div>
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-4xl mx-auto w-full">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-8 text-center">
               Our Story
             </h2>
@@ -82,8 +82,8 @@ export default function AboutUs() {
       </section>
 
       {/* Meet Our Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Meet Our Team
           </h2>
@@ -122,7 +122,7 @@ export default function AboutUs() {
           </div>
 
           {/* Support Team */}
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto w-full">
             <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-8 text-center">
               Our Support Team
             </h3>
@@ -171,13 +171,13 @@ export default function AboutUs() {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto w-full">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-12 text-center">
               Our Concierge Approach
             </h2>
-            <div className="mb-12 text-center max-w-3xl mx-auto">
+            <div className="mb-12 text-center max-w-3xl mx-auto w-full">
               <p className="text-lg text-gray-700">
                 We operate on a concierge model with a limited patient panel, ensuring you receive 
                 unparalleled access to our team, individualized attention, and truly integrated care 
@@ -231,13 +231,13 @@ export default function AboutUs() {
       </section>
 
       {/* Concierge Model Benefits */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto w-full">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
               The Concierge Difference
             </h2>
-            <p className="text-base md:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto w-full">
               Our membership-based concierge model ensures you receive premium, highly personalized 
               care with unparalleled access to our team.
             </p>
@@ -340,10 +340,10 @@ export default function AboutUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#1a2744] text-white">
+      <section className="py-12 md:py-20 bg-[#1a2744] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto w-full">
             Schedule your comprehensive assessment and take the first step toward lasting weight loss.
           </p>
           <Link 
@@ -357,14 +357,14 @@ export default function AboutUs() {
 
       {/* Footer */}
       <footer className="bg-[#1a2744] text-white py-12 border-t border-gray-700">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.

@@ -47,7 +47,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <nav className="container mx-auto px-6 py-6">
@@ -77,7 +77,7 @@ export default function Home() {
             {/* Center Logo */}
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
-              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
             </div>
             
             {/* Desktop Right Menu Items */}
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           
           {/* Right Side - Content */}
-          <div className="flex items-center justify-center px-6 md:px-16 py-12 md:py-0">
+          <div className="flex items-center justify-center px-6 md:px-6 md:px-16 py-12 md:py-0">
             <div className="max-w-xl animate-fade-in">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-6 md:mb-8 leading-tight">
                 Achieve Lasting Weight Loss With Medical Expertise
@@ -147,14 +147,14 @@ export default function Home() {
       </section>
 
       {/* Weight Loss Philosophy Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1a2744] mb-6">
               Weight Loss Isn't Just About<br />Diet & Exercise
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto w-full">
               If you have a BMI over 25 and have tried commercial programs without lasting success,<br />
               you already know the truth: conventional weight loss methods aren't effective.
             </p>
@@ -196,8 +196,8 @@ export default function Home() {
       </section>
 
       {/* Center of Excellence Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#1a2744] mb-4">
@@ -251,15 +251,15 @@ export default function Home() {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
             Our Process
           </h2>
 
           {/* Process Flow */}
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto w-full">
             {/* Step 1 - Initial Assessment */}
             <div className="bg-white rounded-lg shadow-md p-8 mb-8">
               <div className="flex items-center gap-6 mb-4">
@@ -361,8 +361,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
             Testimonials
@@ -416,15 +416,15 @@ export default function Home() {
       </section>
 
       {/* Schedule CTA Section */}
-      <section id="schedule" className="py-20 bg-white border-b-2 border-gray-800">
-        <div className="container mx-auto px-6">
+      <section id="schedule" className="py-12 md:py-20 bg-white border-b-2 border-gray-800">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
             Schedule A Comprehensive<br />Assessment
           </h2>
 
           {/* Icons */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 md:gap-16 max-w-4xl mx-auto mb-16">
             <div className="flex justify-center">
               <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
                 <span className="text-8xl">📞</span>
@@ -443,13 +443,13 @@ export default function Home() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex justify-center items-center gap-6 max-w-5xl mx-auto">
+          <div className="flex justify-center items-center gap-6 max-w-5xl mx-auto w-full">
             <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
               Call Now
             </button>
             <Link 
               href="/appointments"
-              className="bg-gray-300 text-gray-700 px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition inline-block"
+              className="bg-gray-300 text-gray-700 px-6 md:px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition inline-block"
             >
               Schedule An Appointment
             </Link>
@@ -461,8 +461,8 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-100 border-b-2 border-gray-800">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-100 border-b-2 border-gray-800">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
             Frequently Asked<br />Questions
@@ -554,8 +554,8 @@ export default function Home() {
       </section>
 
       {/* Find Us / Map Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
             Find Us
@@ -610,14 +610,14 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#1a2744] text-white py-12">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.

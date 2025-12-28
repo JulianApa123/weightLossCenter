@@ -10,7 +10,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="bg-white border-b border-gray-200">
         <nav className="container mx-auto px-6 py-6">
@@ -26,7 +26,7 @@ export default function Testimonials() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-xl font-medium text-gray-900">Lunena Clinic and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900 truncate">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
             </Link>
             
             {/* Right Menu Items */}
@@ -39,25 +39,25 @@ export default function Testimonials() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Patient Success Stories
           </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
             Real transformations from real people who achieved lasting weight loss with our program
           </p>
         </div>
       </section>
 
       {/* Featured Success Stories */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Featured Success Stories
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto w-full">
             {/* Featured Story 1 */}
             <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-300 h-96 flex items-center justify-center">
@@ -102,13 +102,13 @@ export default function Testimonials() {
       </section>
 
       {/* Video Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             Video Testimonials
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto w-full">
             {/* Video 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
               <div className="bg-gray-800 h-64 flex items-center justify-center">
@@ -155,13 +155,13 @@ export default function Testimonials() {
       </section>
 
       {/* Written Testimonials Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
             What Our Patients Say
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto w-full">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="bg-gray-50 rounded-lg p-6 shadow-md hover-lift">
                 <div className="text-yellow-500 text-2xl mb-4">★★★★★</div>
@@ -182,8 +182,8 @@ export default function Testimonials() {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-20 bg-[#1a2744] text-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-[#1a2744] text-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-4xl font-bold mb-16 text-center">
             Our Results Speak For Themselves
           </h2>
@@ -210,16 +210,16 @@ export default function Testimonials() {
       </section>
 
       {/* Before/After Gallery */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
             Transformation Gallery
           </h2>
-          <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto w-full">
             See the incredible transformations of our patients (with their permission)
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto w-full">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md hover-lift">
                 <div className="grid grid-cols-2">
@@ -241,12 +241,12 @@ export default function Testimonials() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-base md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto w-full">
             Join hundreds of patients who have transformed their lives with our comprehensive weight loss program.
           </p>
           <Link 
@@ -260,14 +260,14 @@ export default function Testimonials() {
 
       {/* Footer */}
       <footer className="bg-[#1a2744] text-white py-12 border-t border-gray-700">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
