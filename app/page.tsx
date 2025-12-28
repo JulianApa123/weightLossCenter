@@ -798,7 +798,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
+                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
