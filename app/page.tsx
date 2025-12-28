@@ -77,7 +77,7 @@ export default function Home() {
             {/* Center Logo */}
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
-              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </div>
             
             {/* Desktop Right Menu Items */}
@@ -443,17 +443,17 @@ export default function Home() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex justify-center items-center gap-6 max-w-5xl mx-auto w-full">
-            <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 max-w-5xl mx-auto w-full px-4">
+            <button className="w-full md:w-auto bg-gray-300 text-gray-700 px-8 md:px-12 py-3 md:py-4 rounded-full text-lg md:text-xl font-medium hover:bg-gray-400 transition">
               Call Now
             </button>
             <Link 
               href="/appointments"
-              className="bg-gray-300 text-gray-700 px-6 md:px-16 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition inline-block"
+              className="w-full md:w-auto bg-gray-300 text-gray-700 px-8 md:px-16 py-3 md:py-4 rounded-full text-lg md:text-xl font-medium hover:bg-gray-400 transition inline-block text-center"
             >
               Schedule An Appointment
             </Link>
-            <button className="bg-gray-300 text-gray-700 px-12 py-4 rounded-full text-xl font-medium hover:bg-gray-400 transition">
+            <button className="w-full md:w-auto bg-gray-300 text-gray-700 px-8 md:px-12 py-3 md:py-4 rounded-full text-lg md:text-xl font-medium hover:bg-gray-400 transition">
               Email Us
             </button>
           </div>

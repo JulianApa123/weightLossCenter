@@ -37,12 +37,26 @@ export default function Appointments() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Header/Navigation */}
-      <header className="bg-white border-b border-gray-200">
-        <nav className="container mx-auto px-6 py-6">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav className="container mx-auto px-4 md:px-6 max-w-full py-6">
           <div className="flex items-center justify-between">
-            {/* Left Menu Items */}
-            <div className="flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-gray-700 hover:text-gray-900"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+
+            {/* Desktop Left Menu Items */}
+            <div className="hidden md:flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</a>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
               <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
@@ -50,21 +64,38 @@ export default function Appointments() {
             
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-              <span className="text-base md:text-xl font-medium text-gray-900 truncate">Lunena Clinic</span><span className="hidden lg:inline"> and Therapeutics</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </Link>
             
-            {/* Right Menu Items */}
-            <div className="flex space-x-8">
-              <Link href="/appointments" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Book Appointment</Link>
+            {/* Desktop Right Menu Items */}
+            <div className="hidden md:flex space-x-8">
+              <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
+
+            {/* Mobile Book Appointment Button */}
+            <Link href="/appointments" className="md:hidden bg-[#1a2744] text-white px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+              Book
+            </Link>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
+              <Link href="/" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Home</Link>
+              <Link href="/about" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">About Us</Link>
+              <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
+              <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
+              <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
+              <a href="#" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</a>
+            </div>
+          )}
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
             Schedule Your Appointment
@@ -76,7 +107,7 @@ export default function Appointments() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto w-full">
             {/* Left Side - Form */}
@@ -101,7 +132,7 @@ export default function Appointments() {
                       value={formData.firstName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                       placeholder="John"
                     />
                   </div>
@@ -115,7 +146,7 @@ export default function Appointments() {
                       value={formData.lastName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                       placeholder="Doe"
                     />
                   </div>
@@ -132,7 +163,7 @@ export default function Appointments() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     placeholder="john.doe@example.com"
                   />
                 </div>
@@ -147,7 +178,7 @@ export default function Appointments() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -162,7 +193,7 @@ export default function Appointments() {
                     value={formData.appointmentType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                   >
                     <option value="">Select an option</option>
                     <option value="initial">Initial Comprehensive Assessment</option>
@@ -184,7 +215,7 @@ export default function Appointments() {
                       value={formData.preferredDate}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     />
                   </div>
                   <div>
@@ -196,7 +227,7 @@ export default function Appointments() {
                       value={formData.preferredTime}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     >
                       <option value="">Select a time</option>
                       <option value="morning">Morning (9am - 12pm)</option>
@@ -216,7 +247,7 @@ export default function Appointments() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     placeholder="Tell us about your goals or any questions you have..."
                   ></textarea>
                 </div>
@@ -332,7 +363,7 @@ export default function Appointments() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-8 text-center">
             Visit Our Clinic
