@@ -2,12 +2,20 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Stethoscope, ClipboardList, HeartCrack, Phone, Calendar, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const totalSlides = 3;
+
+  // BMI Calculator states
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [bmi, setBmi] = useState<number | null>(null);
+  const [category, setCategory] = useState('');
+  const [goalWeight, setGoalWeight] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,6 +40,37 @@ export default function Home() {
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  // BMI Calculator function
+  const calculateBMI = () => {
+    if (height && weight) {
+      const heightInMeters = parseFloat(height) * 0.0254; // inches to meters
+      const weightInKg = parseFloat(weight) * 0.453592; // pounds to kg
+      const bmiValue = weightInKg / (heightInMeters * heightInMeters);
+      setBmi(parseFloat(bmiValue.toFixed(1)));
+
+      // Determine category
+      if (bmiValue < 18.5) {
+        setCategory('Underweight');
+      } else if (bmiValue >= 18.5 && bmiValue < 25) {
+        setCategory('Normal weight');
+      } else if (bmiValue >= 25 && bmiValue < 30) {
+        setCategory('Overweight');
+      } else {
+        setCategory('Obese');
+      }
+    }
+  };
+
+  const calculateWeightLoss = () => {
+    if (height && weight && goalWeight) {
+      const currentWeight = parseFloat(weight);
+      const target = parseFloat(goalWeight);
+      const loss = currentWeight - target;
+      return loss > 0 ? loss.toFixed(1) : '0';
+    }
+    return '0';
   };
 
   const carouselImages = [
@@ -168,7 +207,7 @@ export default function Home() {
                 Medical Barries Go<br />Ignored
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-7xl">🩺</span>
+                <Stethoscope className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
 
@@ -178,7 +217,7 @@ export default function Home() {
                 Cookie Cutter<br />Programs Don't Work
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-7xl">📋</span>
+                <ClipboardList className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
 
@@ -188,7 +227,7 @@ export default function Home() {
                 No Support When It<br />Matters Most
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
-                <span className="text-7xl">💔</span>
+                <HeartCrack className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
           </div>
@@ -415,6 +454,148 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BMI & Weight Loss Calculator Section */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] text-center mb-4">
+              BMI & Weight Loss Calculator
+            </h2>
+            <p className="text-center text-gray-600 mb-8 md:mb-12">
+              Calculate your BMI and see your weight loss goals
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Calculator Form */}
+              <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-6">Enter Your Information</h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Height (inches)
+                    </label>
+                    <input
+                      type="number"
+                      value={height}
+                      onChange={(e) => setHeight(e.target.value)}
+                      placeholder="e.g., 68"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition text-gray-900 placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Current Weight (lbs)
+                    </label>
+                    <input
+                      type="number"
+                      value={weight}
+                      onChange={(e) => setWeight(e.target.value)}
+                      placeholder="e.g., 180"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition text-gray-900 placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Goal Weight (lbs) - Optional
+                    </label>
+                    <input
+                      type="number"
+                      value={goalWeight}
+                      onChange={(e) => setGoalWeight(e.target.value)}
+                      placeholder="e.g., 160"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition text-gray-900 placeholder-gray-400"
+                    />
+                  </div>
+
+                  <button
+                    onClick={calculateBMI}
+                    className="w-full bg-[#1a2744] text-white py-3 rounded-lg font-semibold hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+
+              {/* Results */}
+              <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-6">Your Results</h3>
+                
+                {bmi !== null ? (
+                  <div className="space-y-6">
+                    {/* BMI Result */}
+                    <div className="bg-gray-50 rounded-lg p-6 text-center">
+                      <p className="text-gray-600 mb-2">Your BMI</p>
+                      <p className="text-5xl font-bold text-[#1a2744] mb-2">{bmi}</p>
+                      <p className={`text-lg font-semibold ${
+                        category === 'Normal weight' ? 'text-green-600' :
+                        category === 'Overweight' ? 'text-yellow-600' :
+                        category === 'Obese' ? 'text-red-600' : 'text-blue-600'
+                      }`}>
+                        {category}
+                      </p>
+                    </div>
+
+                    {/* Weight Loss Goal */}
+                    {goalWeight && parseFloat(goalWeight) < parseFloat(weight) && (
+                      <div className="bg-gray-50 rounded-lg p-6 text-center">
+                        <p className="text-gray-600 mb-2">Weight to Lose</p>
+                        <p className="text-4xl font-bold text-[#1a2744] mb-2">
+                          {calculateWeightLoss()} lbs
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          To reach your goal of {goalWeight} lbs
+                        </p>
+                      </div>
+                    )}
+
+                    {/* BMI Categories Reference */}
+                    <div className="border-t pt-4">
+                      <p className="text-sm font-semibold text-gray-700 mb-2">BMI Categories:</p>
+                      <div className="space-y-1 text-sm text-gray-600">
+                        <p>• Underweight: Below 18.5</p>
+                        <p>• Normal: 18.5 - 24.9</p>
+                        <p>• Overweight: 25 - 29.9</p>
+                        <p>• Obese: 30 and above</p>
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="border-t pt-4">
+                      <p className="text-sm text-gray-600 mb-4 text-center">
+                        Ready to start your weight loss journey?
+                      </p>
+                      <Link
+                        href="/appointments"
+                        className="block w-full bg-gray-200 text-[#1a2744] py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center"
+                      >
+                        Book Your Assessment
+                      </Link>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center text-gray-400">
+                      <svg className="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      <p className="text-lg">Enter your information and click Calculate to see your results</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Disclaimer */}
+            <p className="text-center text-sm text-gray-500 mt-8">
+              *This calculator provides estimates only. Consult with our medical team for a comprehensive assessment.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Schedule CTA Section */}
       <section id="schedule" className="py-12 md:py-20 bg-white border-b-2 border-gray-800">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
@@ -427,17 +608,17 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 md:gap-16 max-w-4xl mx-auto mb-16">
             <div className="flex justify-center">
               <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
-                <span className="text-8xl">📞</span>
+                <Phone className="w-24 h-24 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
             <div className="flex justify-center">
               <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
-                <span className="text-8xl">📅</span>
+                <Calendar className="w-24 h-24 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
             <div className="flex justify-center">
               <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center">
-                <span className="text-8xl">✉️</span>
+                <Mail className="w-24 h-24 text-[#1a2744]" strokeWidth={1.5} />
               </div>
             </div>
           </div>
@@ -640,15 +821,15 @@ export default function Home() {
               <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2">📍</span>
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                   <span>18255 Brookhurst St., Suite 100<br />Fountain Valley, CA 92708</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">📞</span>
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="tel:555-123-4567" className="hover:text-white transition">(555) 123-4567</a>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">✉️</span>
+                  <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
                 </li>
               </ul>
@@ -666,9 +847,15 @@ export default function Home() {
               <div className="mt-6">
                 <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📘</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📷</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">🔗</a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Linkedin className="w-6 h-6" />
+                  </a>
                 </div>
               </div>
             </div>

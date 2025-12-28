@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Stethoscope, Activity, Flame, Salad, Dumbbell, Brain, Heart, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Services() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Services() {
 
             {/* Desktop Left Menu Items */}
             <div className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</a>
+              <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Services</Link>
               <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
@@ -97,7 +98,7 @@ export default function Services() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">🩺</span>
+                  <Stethoscope className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Medical Evaluation
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -109,7 +110,7 @@ export default function Services() {
 
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">📊</span>
+                  <Activity className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Body Composition Analysis
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -121,7 +122,7 @@ export default function Services() {
 
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">🔥</span>
+                  <Flame className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Metabolic Testing
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -133,7 +134,7 @@ export default function Services() {
 
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">🥗</span>
+                  <Salad className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Nutritional Assessment
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -145,7 +146,7 @@ export default function Services() {
 
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">💪</span>
+                  <Dumbbell className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Exercise Readiness
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -157,7 +158,7 @@ export default function Services() {
 
               <div className="bg-gray-50 rounded-lg p-6 hover-lift">
                 <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <span className="text-3xl mr-3">🧠</span>
+                  <Brain className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
                   Psychological Assessment
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -182,7 +183,9 @@ export default function Services() {
             {/* Medical Management */}
             <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
-                <div className="text-6xl flex-shrink-0">⚕️</div>
+                <div className="flex-shrink-0">
+                  <Heart className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Medical Evaluation & Management
@@ -224,7 +227,9 @@ export default function Services() {
             {/* Nutritional Programs */}
             <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
-                <div className="text-6xl flex-shrink-0">🥗</div>
+                <div className="flex-shrink-0">
+                  <Salad className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Personalized Nutritional Programs
@@ -266,7 +271,9 @@ export default function Services() {
             {/* Exercise Programs */}
             <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
-                <div className="text-6xl flex-shrink-0">💪</div>
+                <div className="flex-shrink-0">
+                  <Dumbbell className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Structured Exercise Programs
@@ -308,7 +315,9 @@ export default function Services() {
             {/* Behavioral Health */}
             <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="flex items-start gap-6">
-                <div className="text-6xl flex-shrink-0">🧠</div>
+                <div className="flex-shrink-0">
+                  <Brain className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     Behavioral Health Support
@@ -639,15 +648,15 @@ export default function Services() {
               <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2">📍</span>
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                   <span>18255 Brookhurst St., Suite 100<br />Fountain Valley, CA 92708</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">📞</span>
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="tel:555-123-4567" className="hover:text-white transition">(555) 123-4567</a>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">✉️</span>
+                  <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
                 </li>
               </ul>
@@ -665,9 +674,9 @@ export default function Services() {
               <div className="mt-6">
                 <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📘</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📷</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">🔗</a>
+                  <a href="#" className="hover:opacity-70 transition"><Facebook className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Instagram className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Linkedin className="w-6 h-6" /></a>
                 </div>
               </div>
             </div>

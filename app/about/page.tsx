@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Salad, Brain, Dumbbell, Microscope, User, Target, Handshake, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function AboutUs() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function AboutUs() {
 
             {/* Desktop Left Menu Items */}
             <div className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</a>
+              <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
               <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
@@ -161,7 +162,7 @@ export default function AboutUs() {
               {/* Registered Dietitian */}
               <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-5xl">🥗</span>
+                  <Salad className="w-16 h-16 text-[#1a2744]" strokeWidth={1.5} />
                 </div>
                 <h4 className="text-xl font-bold text-[#1a2744] mb-2">
                   Registered Dietitians
@@ -174,7 +175,7 @@ export default function AboutUs() {
               {/* Behavioral Therapist */}
               <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-5xl">🧠</span>
+                  <Brain className="w-16 h-16 text-[#1a2744]" strokeWidth={1.5} />
                 </div>
                 <h4 className="text-xl font-bold text-[#1a2744] mb-2">
                   Behavioral Therapists
@@ -187,7 +188,7 @@ export default function AboutUs() {
               {/* Exercise Physiologist */}
               <div className="bg-white rounded-lg shadow-md p-6 text-center hover-lift">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-5xl">💪</span>
+                  <Dumbbell className="w-16 h-16 text-[#1a2744]" strokeWidth={1.5} />
                 </div>
                 <h4 className="text-xl font-bold text-[#1a2744] mb-2">
                   Exercise Physiologists
@@ -218,7 +219,9 @@ export default function AboutUs() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Evidence-Based */}
               <div className="bg-gray-50 rounded-lg p-8">
-                <div className="text-4xl mb-4">🔬</div>
+                <div className="mb-4">
+                  <Microscope className="w-12 h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Evidence-Based</h3>
                 <p className="text-gray-700">
                   Our treatments are grounded in the latest medical research and proven clinical outcomes. 
@@ -229,7 +232,9 @@ export default function AboutUs() {
 
               {/* Personalized */}
               <div className="bg-gray-50 rounded-lg p-8">
-                <div className="text-4xl mb-4">👤</div>
+                <div className="mb-4">
+                  <User className="w-12 h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Highly Personalized</h3>
                 <p className="text-gray-700">
                   Every treatment plan is customized based on your comprehensive initial assessment, 
@@ -239,7 +244,9 @@ export default function AboutUs() {
 
               {/* Comprehensive */}
               <div className="bg-gray-50 rounded-lg p-8">
-                <div className="text-4xl mb-4">🎯</div>
+                <div className="mb-4">
+                  <Target className="w-12 h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Multidisciplinary Care</h3>
                 <p className="text-gray-700">
                   All specialists under one roof—physicians, registered dietitians, exercise physiologists, 
@@ -249,7 +256,9 @@ export default function AboutUs() {
 
               {/* Supportive */}
               <div className="bg-gray-50 rounded-lg p-8">
-                <div className="text-4xl mb-4">🤝</div>
+                <div className="mb-4">
+                  <Handshake className="w-12 h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
                 <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-4">Enhanced Access</h3>
                 <p className="text-gray-700">
                   Direct phone and email access to your care team, expedited appointments, longer 
@@ -418,15 +427,15 @@ export default function AboutUs() {
               <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2">📍</span>
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                   <span>18255 Brookhurst St., Suite 100<br />Fountain Valley, CA 92708</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">📞</span>
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="tel:555-123-4567" className="hover:text-white transition">(555) 123-4567</a>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">✉️</span>
+                  <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
                 </li>
               </ul>
@@ -444,9 +453,9 @@ export default function AboutUs() {
               <div className="mt-6">
                 <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📘</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📷</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">🔗</a>
+                  <a href="#" className="hover:opacity-70 transition"><Facebook className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Instagram className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Linkedin className="w-6 h-6" /></a>
                 </div>
               </div>
             </div>

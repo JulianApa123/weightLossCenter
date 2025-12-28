@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Clock } from 'lucide-react';
 
 export default function Appointments() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,23 +16,102 @@ export default function Appointments() {
     preferredTime: '',
     message: ''
   });
+  
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+
+    // Required fields
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
+    if (!formData.appointmentType) newErrors.appointmentType = 'Please select an appointment type';
+    if (!formData.preferredDate) newErrors.preferredDate = 'Please select a preferred date';
+    if (!formData.preferredTime) newErrors.preferredTime = 'Please select a preferred time';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will go here
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you shortly to confirm your appointment.');
+    
+    // Validate form
+    if (!validateForm()) {
+      // Scroll to first error
+      const firstError = document.querySelector('.border-red-500');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    // Show loading state
+    setIsSubmitting(true);
+
+    // Simulate submission (replace this with actual submission later)
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      
+      // Store in localStorage as backup
+      const submissions = JSON.parse(localStorage.getItem('appointmentSubmissions') || '[]');
+      submissions.push({
+        ...formData,
+        submittedAt: new Date().toISOString()
+      });
+      localStorage.setItem('appointmentSubmissions', JSON.stringify(submissions));
+      
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        appointmentType: '',
+        preferredDate: '',
+        preferredTime: '',
+        message: ''
+      });
+
+      // Scroll to success message
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }, 1500);
   };
 
   return (
@@ -56,7 +136,7 @@ export default function Appointments() {
 
             {/* Desktop Left Menu Items */}
             <div className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</a>
+              <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
               <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
@@ -70,7 +150,7 @@ export default function Appointments() {
             
             {/* Desktop Right Menu Items */}
             <div className="hidden md:flex space-x-8">
-              <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
+              <Link href="/appointments" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Book Appointment</Link>
               <a href="#" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</a>
             </div>
 
@@ -87,7 +167,7 @@ export default function Appointments() {
               <Link href="/about" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">About Us</Link>
               <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
               <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
-              <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
+              <Link href="/appointments" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">Book Appointment</Link>
               <a href="#" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</a>
             </div>
           )}
@@ -105,6 +185,31 @@ export default function Appointments() {
           </p>
         </div>
       </section>
+
+      {/* Success Message */}
+      {submitSuccess && (
+        <div className="bg-green-50 border-l-4 border-green-500 p-6 mx-4 md:mx-auto max-w-4xl mt-6 rounded-lg animate-fade-in">
+          <div className="flex items-start">
+            <svg className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-green-800 mb-1">
+                Appointment Request Received!
+              </h3>
+              <p className="text-green-700 mb-3">
+                Thank you for your submission. Our team will contact you within 24 hours to confirm your appointment.
+              </p>
+              <button
+                onClick={() => setSubmitSuccess(false)}
+                className="text-green-600 hover:text-green-800 font-medium text-sm underline"
+              >
+                Dismiss
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <section className="py-12 md:py-12 md:py-20 bg-white">
@@ -132,9 +237,14 @@ export default function Appointments() {
                       value={formData.firstName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                        errors.firstName ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                      }`}
                       placeholder="John"
                     />
+                    {errors.firstName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                    )}
                   </div>
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
@@ -146,9 +256,14 @@ export default function Appointments() {
                       value={formData.lastName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                        errors.lastName ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                      }`}
                       placeholder="Doe"
                     />
+                    {errors.lastName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
 
@@ -163,9 +278,14 @@ export default function Appointments() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                      errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                    }`}
                     placeholder="john.doe@example.com"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
@@ -178,9 +298,14 @@ export default function Appointments() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                      errors.phone ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                    }`}
                     placeholder="(555) 123-4567"
                   />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  )}
                 </div>
 
                 {/* Appointment Type */}
@@ -193,7 +318,9 @@ export default function Appointments() {
                     value={formData.appointmentType}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                      errors.appointmentType ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                    }`}
                   >
                     <option value="">Select an option</option>
                     <option value="initial">Initial Comprehensive Assessment</option>
@@ -201,6 +328,9 @@ export default function Appointments() {
                     <option value="followup">Follow-up Appointment</option>
                     <option value="seminar">Weight Loss Seminar</option>
                   </select>
+                  {errors.appointmentType && (
+                    <p className="text-red-500 text-sm mt-1">{errors.appointmentType}</p>
+                  )}
                 </div>
 
                 {/* Date and Time */}
@@ -215,8 +345,14 @@ export default function Appointments() {
                       value={formData.preferredDate}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      min={new Date().toISOString().split('T')[0]}
+                      className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                        errors.preferredDate ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                      }`}
                     />
+                    {errors.preferredDate && (
+                      <p className="text-red-500 text-sm mt-1">{errors.preferredDate}</p>
+                    )}
                   </div>
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
@@ -227,13 +363,18 @@ export default function Appointments() {
                       value={formData.preferredTime}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                      className={`w-full px-4 py-3 text-base md:text-lg text-gray-900 border rounded-lg focus:outline-none transition ${
+                        errors.preferredTime ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-[#1a2744]'
+                      }`}
                     >
                       <option value="">Select a time</option>
                       <option value="morning">Morning (9am - 12pm)</option>
                       <option value="afternoon">Afternoon (12pm - 3pm)</option>
                       <option value="evening">Evening (3pm - 6pm)</option>
                     </select>
+                    {errors.preferredTime && (
+                      <p className="text-red-500 text-sm mt-1">{errors.preferredTime}</p>
+                    )}
                   </div>
                 </div>
 
@@ -247,7 +388,7 @@ export default function Appointments() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
+                    className="w-full px-4 py-3 text-base md:text-lg text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1a2744] transition"
                     placeholder="Tell us about your goals or any questions you have..."
                   ></textarea>
                 </div>
@@ -255,9 +396,24 @@ export default function Appointments() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#1a2744] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-[#1a2744] hover:bg-[#2a3754] transform hover:scale-105 hover:shadow-lg'
+                  } text-white`}
                 >
-                  Request Appointment
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting...
+                    </span>
+                  ) : (
+                    'Request Appointment'
+                  )}
                 </button>
 
                 <p className="text-sm text-gray-600 text-center">
@@ -273,7 +429,7 @@ export default function Appointments() {
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <span className="text-3xl mr-4">📍</span>
+                    <MapPin className="w-8 h-8 mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Location</p>
                       <p className="text-gray-300">
@@ -283,7 +439,7 @@ export default function Appointments() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-3xl mr-4">📞</span>
+                    <Phone className="w-8 h-8 mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Phone</p>
                       <a href="tel:555-123-4567" className="text-gray-300 hover:text-white transition">
@@ -292,7 +448,7 @@ export default function Appointments() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-3xl mr-4">✉️</span>
+                    <Mail className="w-8 h-8 mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Email</p>
                       <a href="mailto:info@lumenaclinic.com" className="text-gray-300 hover:text-white transition">
@@ -301,7 +457,7 @@ export default function Appointments() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-3xl mr-4">🕒</span>
+                    <Clock className="w-8 h-8 mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Office Hours</p>
                       <p className="text-gray-300">
@@ -435,15 +591,15 @@ export default function Appointments() {
               <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2">📍</span>
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                   <span>18255 Brookhurst St., Suite 100<br />Fountain Valley, CA 92708</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">📞</span>
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="tel:555-123-4567" className="hover:text-white transition">(555) 123-4567</a>
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">✉️</span>
+                  <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
                   <a href="mailto:info@lumenaclinic.com" className="hover:text-white transition">info@lumenaclinic.com</a>
                 </li>
               </ul>
@@ -461,9 +617,9 @@ export default function Appointments() {
               <div className="mt-6">
                 <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📘</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">📷</a>
-                  <a href="#" className="text-2xl hover:opacity-70 transition">🔗</a>
+                  <a href="#" className="hover:opacity-70 transition"><Facebook className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Instagram className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition"><Linkedin className="w-6 h-6" /></a>
                 </div>
               </div>
             </div>
