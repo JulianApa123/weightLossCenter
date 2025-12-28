@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Stethoscope, ClipboardList, HeartCrack, Phone, Calendar, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,6 +24,7 @@ export default function Home() {
 
   // Auto-play carousel
   useEffect(() => {
+    document.title = "Home | Lunena Clinic and Therapeutics";
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, 5000); // Change slide every 5 seconds
@@ -876,6 +878,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

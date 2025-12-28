@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Stethoscope, Activity, Flame, Salad, Dumbbell, Brain, Heart, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import BackToTop from '@/components/BackToTop';
 
 export default function Services() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
+    document.title = "Our Services | Lunena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -697,6 +699,7 @@ export default function Services() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

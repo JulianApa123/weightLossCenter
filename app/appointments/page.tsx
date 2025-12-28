@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Clock } from 'lucide-react';
+import BackToTop from '@/components/BackToTop';
 
 export default function Appointments() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Appointments() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
+    document.title = "Book Appointment | Lunena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -640,6 +642,7 @@ export default function Appointments() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

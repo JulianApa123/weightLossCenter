@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Salad, Brain, Dumbbell, Microscope, User, Target, Handshake, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import BackToTop from '@/components/BackToTop';
 
+// Set page title using useEffect
 export default function AboutUs() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
+    document.title = "About Us | Lunena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -476,6 +479,7 @@ export default function AboutUs() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

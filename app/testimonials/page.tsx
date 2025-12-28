@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import BackToTop from '@/components/BackToTop';
 
 export default function Testimonials() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
+    document.title = "Patient Success Stories | Lunena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -371,6 +373,7 @@ export default function Testimonials() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

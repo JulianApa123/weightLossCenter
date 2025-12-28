@@ -17,8 +17,12 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Weight Loss Center | Transform Your Health",
-  description: "Professional weight loss solutions tailored to your needs. Expert medical guidance for sustainable results.",
+  title: {
+    default: "Lunena Clinic and Therapeutics | Medical Weight Loss Center",
+    template: "%s | Lunena Clinic and Therapeutics"
+  },
+  description: "Evidence-based medical weight loss programs with personalized care. DEXA scans, metabolic testing, and comprehensive support from our expert team in Fountain Valley, CA.",
+  keywords: ["weight loss", "medical weight loss", "obesity treatment", "DEXA scan", "metabolic testing", "Fountain Valley", "concierge medicine"],
 };
 
 export default function RootLayout({
