@@ -8,7 +8,7 @@ import BackToTop from '@/components/BackToTop';
 export default function Services() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
-    document.title = "Our Services | Lunena Clinic and Therapeutics";
+    document.title = "Our Services | Lumena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -43,7 +43,7 @@ export default function Services() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
-              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lumena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </Link>
             
             {/* Desktop Right Menu Items */}
@@ -90,85 +90,130 @@ export default function Services() {
           <div className="max-w-5xl mx-auto w-full">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-4">
-                Initial Comprehensive Assessment
+                Initial Comprehensive Evaluation
               </h2>
-              <p className="text-base md:text-xl text-gray-600">
-                Your journey begins with a thorough evaluation to create your personalized treatment plan
+              <p className="text-base md:text-xl text-gray-600 mb-8">
+                Medical Evaluation with Dr. Aparnath followed by a customized series of evaluations tailored to patient needs.
               </p>
+              <div className="bg-blue-50 border-l-4 border-[#1a2744] p-6 text-left max-w-3xl mx-auto">
+                <p className="text-gray-700 mb-2">
+                  <strong>Investment in Your Health:</strong> The initial consultation fee will be credited toward your customized treatment plan pricing.
+                </p>
+                <p className="text-sm text-gray-600">
+                  Contact us to discuss pricing tailored to your specific needs.
+                </p>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Stethoscope className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Medical Evaluation
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Complete medical history and physical examination</li>
-                  <li>• Comprehensive blood work and lab panel</li>
-                  <li>• Review of medications and co-morbidities</li>
-                </ul>
-              </div>
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 mb-8">
+              <h3 className="text-xl md:text-2xl font-bold text-[#1a2744] mb-6 text-center">
+                Your Comprehensive First Evaluation Includes:
+              </h3>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Evaluation 1 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Stethoscope className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Full Evaluation with Licensed Physician
+                      </h4>
+                      <p className="text-gray-700 text-sm mb-2">
+                        <em>Not a Mid-Level Provider</em>
+                      </p>
+                      <p className="text-gray-600">
+                        Comprehensive medical assessment with Dr. Aparnath to understand your complete health picture.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Activity className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Body Composition Analysis
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• DEXA scan for precise body composition</li>
-                  <li>• Measurement of muscle mass, body fat percentage</li>
-                  <li>• Bone density assessment</li>
-                </ul>
-              </div>
+                {/* Evaluation 2 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Activity className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Full Comprehensive Laboratory Exam
+                      </h4>
+                      <p className="text-gray-600">
+                        Complete blood work and diagnostic testing to identify underlying health factors affecting your weight.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Flame className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Metabolic Testing
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Resting Metabolic Rate (RMR) testing</li>
-                  <li>• Determination of daily caloric needs</li>
-                  <li>• Metabolic efficiency assessment</li>
-                </ul>
-              </div>
+                {/* Evaluation 3 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Activity className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Full Professional Medical BodyDexa Scan
+                      </h4>
+                      <p className="text-gray-600">
+                        Precise body composition analysis measuring muscle mass, body fat percentage, and bone density.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Salad className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Nutritional Assessment
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Dietary habits and food preferences review</li>
-                  <li>• Nutritional deficiencies identification</li>
-                  <li>• Eating pattern analysis</li>
-                </ul>
-              </div>
+                {/* Evaluation 4 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Salad className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Licensed Nutriology Consultation
+                      </h4>
+                      <p className="text-gray-600">
+                        Personalized nutritional assessment and guidance from our licensed nutrition specialist.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Dumbbell className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Exercise Readiness
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Current fitness level assessment</li>
-                  <li>• Physical limitations evaluation</li>
-                  <li>• Exercise preferences and goals</li>
-                </ul>
-              </div>
+                {/* Evaluation 5 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Dumbbell className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Certified Fitness Consultation
+                      </h4>
+                      <p className="text-gray-600">
+                        Exercise assessment and personalized fitness planning with our certified exercise physiologist.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-lg p-6 hover-lift">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4 flex items-center">
-                  <Brain className="w-8 h-8 text-[#1a2744] mr-3" strokeWidth={1.5} />
-                  Psychological Assessment
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Emotional eating patterns evaluation</li>
-                  <li>• Stress and mental health screening</li>
-                  <li>• Behavioral barriers identification</li>
-                </ul>
+                {/* Evaluation 6 */}
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
+                  <div className="flex items-start gap-4">
+                    <Brain className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
+                        Emotional Support Counseling
+                      </h4>
+                      <p className="text-gray-600">
+                        Behavioral health assessment addressing emotional eating patterns and psychological factors.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Link
+                href="/appointments"
+                className="inline-block bg-[#1a2744] text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-[#2a3754] transition transform hover:scale-105"
+              >
+                Schedule Your Evaluation
+              </Link>
             </div>
           </div>
         </div>
@@ -361,187 +406,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Program Tiers Section */}
-      <section className="py-12 md:py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-6xl mx-auto w-full">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-6 text-center">
-              Choose Your Program
-            </h2>
-            <p className="text-base md:text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto w-full">
-              We offer flexible program options to meet your unique needs and level of commitment
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 stagger-children">
-              {/* Intensive Program */}
-              <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg p-8 border-2 border-blue-200">
-                <div className="text-center mb-6">
-                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
-                    Intensive Weight Loss Program
-                  </h3>
-                  <p className="text-gray-600">For significant, structured weight loss</p>
-                </div>
-                
-                <div className="mb-6">
-                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
-                    $6,500
-                  </div>
-                  <p className="text-gray-600">52-week program + medication costs</p>
-                  <p className="text-sm text-gray-500">($125 per visit)</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Structured multi-week program</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Weekly appointments with care team</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Comprehensive medical supervision</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>All diagnostic testing included</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Personalized meal and exercise plans</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Individual behavioral therapy</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Direct team access via phone/email</span>
-                  </li>
-                </ul>
-
-                <Link
-                  href="/appointments"
-                  className="block w-full bg-[#1a2744] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#2a3754] transition"
-                >
-                  Get Started
-                </Link>
-              </div>
-
-              {/* Maintenance Program */}
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
-                <div className="text-center mb-6">
-                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
-                    Maintenance Program
-                  </h3>
-                  <p className="text-gray-600">For long-term success support</p>
-                </div>
-                
-                <div className="mb-6">
-                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
-                    Custom
-                  </div>
-                  <p className="text-gray-600">Monthly or bi-monthly visits</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Ongoing accountability and support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Monthly or bi-monthly check-ins</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Group support sessions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Continued access to resources</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Weight monitoring and adjustments</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Educational workshops</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Lifestyle coaching</span>
-                  </li>
-                </ul>
-
-                <Link
-                  href="/appointments"
-                  className="block w-full bg-gray-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-                >
-                  Learn More
-                </Link>
-              </div>
-
-              {/* A La Carte */}
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
-                <div className="text-center mb-6">
-                  <h3 className="text-lg md:text-2xl font-bold text-[#1a2744] mb-2">
-                    A La Carte Services
-                  </h3>
-                  <p className="text-gray-600">Flexible, targeted support</p>
-                </div>
-                
-                <div className="mb-6">
-                  <div className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-2">
-                    Varies
-                  </div>
-                  <p className="text-gray-600">Choose specific services</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Select only the services you need</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Nutritional counseling sessions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Exercise physiology consultations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Behavioral therapy sessions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Body composition testing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Metabolic rate testing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Flexible scheduling</span>
-                  </li>
-                </ul>
-
-                <Link
-                  href="/appointments"
-                  className="block w-full bg-gray-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Bariatric Support Section */}
       <section className="py-12 md:py-12 md:py-20 bg-gray-50">
@@ -627,7 +491,7 @@ export default function Services() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lumena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
@@ -688,7 +552,7 @@ export default function Services() {
           <div className="border-t border-gray-600 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2025 Lunena Clinic and Therapeutics Inc. All rights reserved.
+                © 2025 Lumena Clinic and Therapeutics Inc. All rights reserved.
               </p>
               <div className="flex gap-6 text-gray-400 text-sm">
                 <a href="#" className="hover:text-white transition">Privacy Policy</a>

@@ -18,8 +18,8 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: {
-    default: "Lunena Clinic and Therapeutics | Medical Weight Loss Center",
-    template: "%s | Lunena Clinic and Therapeutics"
+    default: "Lumena Clinic and Therapeutics | Medical Weight Loss Center",
+    template: "%s | Lumena Clinic and Therapeutics"
   },
   description: "Evidence-based medical weight loss programs with personalized care. DEXA scans, metabolic testing, and comprehensive support from our expert team in Fountain Valley, CA.",
   keywords: ["weight loss", "medical weight loss", "obesity treatment", "DEXA scan", "metabolic testing", "Fountain Valley", "concierge medicine"],

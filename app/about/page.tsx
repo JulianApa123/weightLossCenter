@@ -10,7 +10,7 @@ export default function AboutUs() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
-    document.title = "About Us | Lunena Clinic and Therapeutics";
+    document.title = "About Us | Lumena Clinic and Therapeutics";
     window.scrollTo(0, 0);
   }, []);
 
@@ -45,7 +45,7 @@ export default function AboutUs() {
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
-              <span className="text-base md:text-xl font-medium text-gray-900">Lunena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
+              <span className="text-base md:text-xl font-medium text-gray-900">Lumena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </Link>
             
             {/* Desktop Right Menu Items */}
@@ -78,7 +78,7 @@ export default function AboutUs() {
       <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-12 md:py-20">
         <div className="container mx-auto px-6 text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
-            About Lunena Clinic and Therapeutics
+            About Lumena Clinic and Therapeutics
           </h1>
           <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
             Expert medical weight loss care dedicated to your long-term success
@@ -127,29 +127,38 @@ export default function AboutUs() {
           <div className="max-w-5xl mx-auto mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-lg shadow-md p-8 hover-lift">
               <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                <p className="text-gray-500">[Doctor Photo]</p>
+                <p className="text-gray-500">[Dr. Aparnath Photo - Coming Soon]</p>
               </div>
               <div>
                 <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-2">
-                  Dr. [Name], MD
+                  Malaygiri J. Aparnath, M.D.
                 </h3>
                 <p className="text-base md:text-xl text-gray-600 mb-4">Medical Director</p>
                 <div className="space-y-4 text-gray-700">
                   <p>
-                    Board-certified in [Specialty] with over [X] years of experience in medical 
-                    weight management and metabolic health.
+                    Board-certified in Internal Medicine and Pulmonary Medicine with extensive experience 
+                    in medical care and critical care medicine. Dr. Aparnath brings a comprehensive, 
+                    evidence-based approach to medical weight management and metabolic health.
                   </p>
                   <p className="font-semibold text-[#1a2744]">Education & Training:</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>MD from [Medical School]</li>
-                    <li>Residency at [Hospital/Program]</li>
-                    <li>Fellowship in [Specialty]</li>
-                    <li>Board Certified in [Specialty]</li>
+                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm md:text-base">
+                    <li>M.B.B.S., B.J. Medical College, Gujarat University, India</li>
+                    <li>Internal Medicine Residency, Winthrop-University Hospital (Stony Brook University)</li>
+                    <li>Fellowship in Pulmonary Disease & Critical Care Medicine, Winthrop-University Hospital</li>
                   </ul>
-                  <p className="font-semibold text-[#1a2744] mt-4">Philosophy:</p>
-                  <p className="italic">
-                    "Every patient deserves a personalized approach to weight loss that addresses 
-                    their unique medical, nutritional, and psychological needs."
+                  <p className="font-semibold text-[#1a2744] mt-4">Board Certifications:</p>
+                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm md:text-base">
+                    <li>American Board of Internal Medicine (ABIM) - Internal Medicine</li>
+                    <li>American Board of Internal Medicine (ABIM) - Pulmonary Medicine</li>
+                  </ul>
+                  <p className="font-semibold text-[#1a2744] mt-4">Hospital Affiliations:</p>
+                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm md:text-base">
+                    <li>Orange Coast Memorial Medical Center - Critical Care & Pulmonology</li>
+                    <li>UCI-Fountain Valley - Critical Care & Pulmonology</li>
+                  </ul>
+                  <p className="font-semibold text-[#1a2744] mt-4">Academic Appointment:</p>
+                  <p className="text-sm md:text-base ml-4">
+                    Former Assistant Clinical Professor of Medicine, University of California, San Francisco (UCSF)
                   </p>
                 </div>
               </div>
@@ -407,7 +416,7 @@ export default function AboutUs() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-white rounded-full"></div>
-                <span className="text-xl font-semibold">Lunena Clinic and Therapeutics</span>
+                <span className="text-xl font-semibold">Lumena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Expert medical weight loss solutions for lasting results. Transform your health with our personalized care.
@@ -468,7 +477,7 @@ export default function AboutUs() {
           <div className="border-t border-gray-600 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2025 Lunena Clinic and Therapeutics Inc. All rights reserved.
+                © 2025 Lumena Clinic and Therapeutics Inc. All rights reserved.
               </p>
               <div className="flex gap-6 text-gray-400 text-sm">
                 <a href="#" className="hover:text-white transition">Privacy Policy</a>
