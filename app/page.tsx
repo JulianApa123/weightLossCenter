@@ -8,7 +8,6 @@ import EngagementPopup from '@/components/EngagementPopup';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const totalSlides = 3;
 
@@ -41,9 +40,6 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   // BMI Calculator function
   const calculateBMI = () => {
@@ -164,23 +160,26 @@ export default function Home() {
           <div className="flex items-center justify-center px-6 md:px-6 md:px-16 py-12 md:py-0">
             <div className="max-w-xl animate-fade-in">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-6 md:mb-8 leading-tight">
-                Achieve Lasting Weight Loss With Medical Expertise
+                Mission Lumena
               </h1>
               <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-12 leading-relaxed">
-                Personalized nutritional programs, advanced diagnostic tools, and behavioral health support for those who struggle with weight loss.
+                A physician-led center dedicated to the comprehensive evaluation and treatment of obesity as a chronic, multisystem health condition. We focus on improving health and performance at any given weight, enabling sustainable weight loss, and minimizing long-term complications through rigorous clinical assessment and individualized care.
+              </p>
+              <p className="text-base md:text-lg text-gray-700 font-semibold mb-8 md:mb-12 italic">
+                We treat the person as a whole — not a number.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   href="/appointments"
                   className="bg-[#1a2744] text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#2a3754] transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-semibold text-center"
                 >
-                  Book Your Assessment
+                  Schedule Evaluation
                 </Link>
                 <Link 
                   href="/services"
                   className="bg-gray-200 text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 font-semibold text-center"
                 >
-                  View Our Services
+                  Our Services
                 </Link>
               </div>
             </div>
@@ -188,17 +187,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Weight Loss Philosophy Section */}
+      {/* Philosophy Section */}
       <section className="py-12 md:py-20 bg-gray-100">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1a2744] mb-6">
-              Weight Loss Isn't Just About<br />Diet & Exercise
+              Obesity as a Chronic Disease
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto w-full">
-              If you have a BMI over 25 and have tried commercial programs without lasting success,<br />
-              you already know the truth: conventional weight loss methods aren't effective.
+              Sustainable outcomes require addressing obesity as a multisystem medical condition,<br />
+              not simply a matter of willpower or effort.
             </p>
           </div>
 
@@ -207,7 +206,7 @@ export default function Home() {
             {/* Column 1 */}
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
-                Medical Barries Go<br />Ignored
+                Physician-Led<br />Evaluation
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
                 <Stethoscope className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
@@ -217,7 +216,7 @@ export default function Home() {
             {/* Column 2 */}
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
-                Cookie Cutter<br />Programs Don't Work
+                Evidence-Based<br />Medicine
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
                 <ClipboardList className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
@@ -227,7 +226,7 @@ export default function Home() {
             {/* Column 3 */}
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-[#1a2744] mb-8">
-                No Support When It<br />Matters Most
+                Individualized<br />Care Plans
               </h3>
               <div className="w-48 h-48 bg-gray-100 rounded-full mx-auto flex items-center justify-center">
                 <HeartCrack className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
@@ -644,98 +643,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-12 md:py-20 bg-gray-100 border-b-2 border-gray-800">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          {/* Header */}
-          <h2 className="text-4xl font-bold text-[#1a2744] text-center mb-16">
-            Frequently Asked<br />Questions
-          </h2>
-
-          {/* FAQ Items */}
-          <div className="max-w-4xl mx-auto space-y-4">
-            {/* FAQ 1 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <button 
-                onClick={() => toggleFaq(0)}
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
-              >
-                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
-                  What makes your weight loss program different from others?
-                </p>
-                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 0 ? 'rotate-45' : ''}`}>
-                  +
-                </div>
-              </button>
-              {openFaq === 0 && (
-                <div className="px-6 pb-6 text-gray-600">
-                  <p>Our program is medically supervised and personalized to your specific health needs, medical history, and weight loss goals. Unlike one-size-fits-all programs, we address underlying medical barriers and provide ongoing professional support.</p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 2 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <button 
-                onClick={() => toggleFaq(1)}
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
-              >
-                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
-                  How long does the program take?
-                </p>
-                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 1 ? 'rotate-45' : ''}`}>
-                  +
-                </div>
-              </button>
-              {openFaq === 1 && (
-                <div className="px-6 pb-6 text-gray-600">
-                  <p>Program length varies based on your individual goals and which program you choose. Our Intensive Weight Loss Program typically runs 12-16 weeks, while our Maintenance Program is ongoing with monthly or bi-weekly check-ins.</p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 3 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <button 
-                onClick={() => toggleFaq(2)}
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
-              >
-                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
-                  Do you accept insurance?
-                </p>
-                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 2 ? 'rotate-45' : ''}`}>
-                  +
-                </div>
-              </button>
-              {openFaq === 2 && (
-                <div className="px-6 pb-6 text-gray-600">
-                  <p>We work with most major insurance providers. Coverage varies by plan and specific services. Contact us for a free consultation to discuss your insurance coverage and payment options.</p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 4 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <button 
-                onClick={() => toggleFaq(3)}
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
-              >
-                <p className="text-xl text-gray-700 pr-8 text-left font-medium">
-                  What can I expect during the initial assessment?
-                </p>
-                <div className={`flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-2xl text-gray-600 transition-transform ${openFaq === 3 ? 'rotate-45' : ''}`}>
-                  +
-                </div>
-              </button>
-              {openFaq === 3 && (
-                <div className="px-6 pb-6 text-gray-600">
-                  <p>Your initial comprehensive assessment includes a full medical evaluation, review of your health history, body composition analysis, metabolic testing, and a consultation with our physician to create your personalized treatment plan.</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Find Us / Map Section */}
       <section className="py-12 md:py-20 bg-gray-100">
