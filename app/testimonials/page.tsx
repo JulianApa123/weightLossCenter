@@ -37,7 +37,7 @@ export default function Testimonials() {
               <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
-              <Link href="/testimonials" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Testimonials</Link>
+              <Link href="/faq" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">FAQ</Link>
             </div>
             
             {/* Center Logo */}
@@ -48,6 +48,7 @@ export default function Testimonials() {
             
             {/* Desktop Right Menu Items */}
             <div className="hidden md:flex space-x-8">
+              <Link href="/testimonials" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Testimonials</Link>
               <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <Link href="/patient-portal" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
             </div>
@@ -64,6 +65,7 @@ export default function Testimonials() {
               <Link href="/" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Home</Link>
               <Link href="/about" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">About Us</Link>
               <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
+              <Link href="/faq" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">FAQ</Link>
               <Link href="/testimonials" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">Testimonials</Link>
               <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
               <Link href="/patient-portal" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
@@ -315,6 +317,7 @@ export default function Testimonials() {
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/testimonials" className="hover:text-white transition">Testimonials</Link></li>
               </ul>
             </div>

@@ -39,7 +39,7 @@ export default function AboutUs() {
               <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">About Us</Link>
               <Link href="/services" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Services</Link>
-              <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
+              <Link href="/faq" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">FAQ</Link>
             </div>
             
             {/* Center Logo */}
@@ -50,6 +50,7 @@ export default function AboutUs() {
             
             {/* Desktop Right Menu Items */}
             <div className="hidden md:flex space-x-8">
+              <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
               <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <Link href="/patient-portal" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
             </div>
@@ -66,6 +67,7 @@ export default function AboutUs() {
               <Link href="/" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Home</Link>
               <Link href="/about" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">About Us</Link>
               <Link href="/services" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Services</Link>
+              <Link href="/faq" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">FAQ</Link>
               <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
               <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
               <Link href="/patient-portal" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
@@ -75,41 +77,33 @@ export default function AboutUs() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-12 md:py-20">
+      <section className="bg-gradient-to-br from-[#1a2744] to-[#2a3754] py-12 md:py-12 md:py-20 text-white">
         <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
-            About Lumena Clinic and Therapeutics
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
+            About Mission Lumena
           </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
-            Expert medical weight loss care dedicated to your long-term success
+          <p className="text-base md:text-xl text-gray-200 max-w-3xl mx-auto w-full">
+            Physician-led obesity treatment focused on comprehensive evaluation and individualized care
           </p>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Mission Statement Section */}
       <section className="py-12 md:py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto w-full">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-8 text-center">
-              Our Story
+              Our Mission
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-              <p>
-                The Weight Loss Center of Excellence was established with a clear mission: to provide 
-                evidence-based, personalized weight management programs that deliver sustainable results. 
-                We recognize that effective weight loss requires more than just diet and exercise advice—it 
-                demands integrated medical, nutritional, and behavioral support to overcome complex challenges.
+            <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-lg p-8 md:p-12 shadow-md">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                Mission Lumena is a physician-led center dedicated to the comprehensive evaluation and treatment of obesity as a chronic, multisystem health condition.
               </p>
-              <p>
-                Our center offers a holistic approach, combining medical supervision, nutritional counseling, 
-                exercise physiology, and behavioral therapy under one roof. We've built our practice around 
-                a concierge model with a limited patient panel, ensuring each client receives unparalleled 
-                access, individualized attention, and truly personalized care.
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                We focus on improving health and performance at any given weight, enabling sustainable weight loss, and minimizing the long-term complications of obesity through rigorous clinical assessment and individualized care.
               </p>
-              <p>
-                What distinguishes us is our commitment to long-term success. We don't just help you lose 
-                weight—we empower you with the tools, knowledge, and ongoing support needed to maintain 
-                your results and transform your overall health for years to come.
+              <p className="text-xl md:text-2xl text-[#1a2744] font-bold italic text-center">
+                We treat the person as a whole — not a number.
               </p>
             </div>
           </div>
@@ -430,6 +424,7 @@ export default function AboutUs() {
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/testimonials" className="hover:text-white transition">Testimonials</Link></li>
               </ul>
             </div>

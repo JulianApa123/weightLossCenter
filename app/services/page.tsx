@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Stethoscope, Activity, Flame, Salad, Dumbbell, Brain, Heart, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Heart, Activity, Wind, Users, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 import BackToTop from '@/components/BackToTop';
 
 export default function Services() {
@@ -37,7 +37,7 @@ export default function Services() {
               <Link href="/" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">About Us</Link>
               <Link href="/services" className="text-gray-900 font-semibold border-b-2 border-[#1a2744] pb-1">Services</Link>
-              <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
+              <Link href="/faq" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">FAQ</Link>
             </div>
             
             {/* Center Logo */}
@@ -48,6 +48,7 @@ export default function Services() {
             
             {/* Desktop Right Menu Items */}
             <div className="hidden md:flex space-x-8">
+              <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
               <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
               <Link href="/patient-portal" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
             </div>
@@ -64,6 +65,7 @@ export default function Services() {
               <Link href="/" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Home</Link>
               <Link href="/about" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">About Us</Link>
               <Link href="/services" className="block text-gray-900 font-semibold py-2 border-b border-gray-200">Services</Link>
+              <Link href="/faq" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">FAQ</Link>
               <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
               <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
               <Link href="/patient-portal" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
@@ -73,391 +75,48 @@ export default function Services() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-12 md:py-12 md:py-20">
-        <div className="container mx-auto px-6 text-center animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold text-[#1a2744] mb-4 md:mb-6">
-            Our Services & Programs
-          </h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto w-full">
-            Comprehensive, evidence-based weight management solutions tailored to your unique needs
-          </p>
-        </div>
-      </section>
-
-      {/* Initial Assessment Section */}
-      <section className="py-12 md:py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-5xl mx-auto w-full">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-4">
-                Initial Comprehensive Evaluation
-              </h2>
-              <p className="text-base md:text-xl text-gray-600 mb-8">
-                Medical Evaluation with Dr. Aparnath followed by a customized series of evaluations tailored to patient needs.
-              </p>
-              <div className="bg-blue-50 border-l-4 border-[#1a2744] p-6 text-left max-w-3xl mx-auto">
-                <p className="text-gray-700 mb-2">
-                  <strong>Investment in Your Health:</strong> The initial consultation fee will be credited toward your customized treatment plan pricing.
-                </p>
-                <p className="text-sm text-gray-600">
-                  Contact us to discuss pricing tailored to your specific needs.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-lg p-8 mb-8">
-              <h3 className="text-xl md:text-2xl font-bold text-[#1a2744] mb-6 text-center">
-                Your Comprehensive First Evaluation Includes:
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Evaluation 1 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Stethoscope className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Full Evaluation with Licensed Physician
-                      </h4>
-                      <p className="text-gray-700 text-sm mb-2">
-                        <em>Not a Mid-Level Provider</em>
-                      </p>
-                      <p className="text-gray-600">
-                        Comprehensive medical assessment with Dr. Aparnath to understand your complete health picture.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evaluation 2 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Activity className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Full Comprehensive Laboratory Exam
-                      </h4>
-                      <p className="text-gray-600">
-                        Complete blood work and diagnostic testing to identify underlying health factors affecting your weight.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evaluation 3 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Activity className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Full Professional Medical BodyDexa Scan
-                      </h4>
-                      <p className="text-gray-600">
-                        Precise body composition analysis measuring muscle mass, body fat percentage, and bone density.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evaluation 4 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Salad className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Licensed Nutriology Consultation
-                      </h4>
-                      <p className="text-gray-600">
-                        Personalized nutritional assessment and guidance from our licensed nutrition specialist.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evaluation 5 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Dumbbell className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Certified Fitness Consultation
-                      </h4>
-                      <p className="text-gray-600">
-                        Exercise assessment and personalized fitness planning with our certified exercise physiologist.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evaluation 6 */}
-                <div className="bg-white rounded-lg p-6 shadow-md hover-lift border-l-4 border-[#1a2744]">
-                  <div className="flex items-start gap-4">
-                    <Brain className="w-10 h-10 text-[#1a2744] flex-shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a2744] mb-2">
-                        Emotional Support Counseling
-                      </h4>
-                      <p className="text-gray-600">
-                        Behavioral health assessment addressing emotional eating patterns and psychological factors.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Link
-                href="/appointments"
-                className="inline-block bg-[#1a2744] text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-[#2a3754] transition transform hover:scale-105"
-              >
-                Schedule Your Evaluation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Services Section */}
-      <section className="py-12 md:py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-16 text-center">
-            Our Core Services
-          </h2>
-
-          <div className="max-w-6xl mx-auto space-y-12">
-            {/* Medical Management */}
-            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Heart className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
-                    Medical Evaluation & Management
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    Physician-led medical oversight ensures safe and effective weight loss, especially for patients 
-                    with co-morbidities such as diabetes, hypertension, or sleep apnea.
-                  </p>
-                  <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Regular physician consultations
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Medication management and review
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Prescription weight loss medications (when appropriate)
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Management of obesity-related conditions
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Ongoing monitoring and adjustments
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Coordination with other specialists
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Nutritional Programs */}
-            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Salad className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
-                    Personalized Nutritional Programs
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    Our registered dietitians create individualized meal plans based on your preferences, 
-                    lifestyle, and medical needs—not one-size-fits-all diets.
-                  </p>
-                  <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Customized meal planning
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Portion control education
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Healthy food choices guidance
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Mindful eating techniques
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Individual and group counseling
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Nutrition education workshops
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Exercise Programs */}
-            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Dumbbell className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
-                    Structured Exercise Programs
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    Certified exercise physiologists design safe, effective exercise routines tailored to your 
-                    fitness level, physical limitations, and personal preferences.
-                  </p>
-                  <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Personalized exercise prescriptions
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Supervised exercise sessions
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Home exercise program development
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Progress tracking and adjustments
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Safe exercise for medical conditions
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Strength and cardiovascular training
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Behavioral Health */}
-            <div className="bg-white rounded-lg shadow-md p-8 hover-lift">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Brain className="w-20 h-20 text-[#1a2744]" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-4">
-                    Behavioral Health Support
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    Licensed therapists address the psychological aspects of weight loss, helping you overcome 
-                    emotional eating, build healthy habits, and maintain motivation.
-                  </p>
-                  <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Individual therapy sessions
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Group support therapy
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Emotional eating intervention
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Stress management techniques
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Body image counseling
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      Cognitive behavioral therapy
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Bariatric Support Section */}
-      <section className="py-12 md:py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-xl md:text-3xl font-bold text-[#1a2744] mb-6 text-center">
-              Bariatric Surgery Support
-            </h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide comprehensive pre-operative and post-operative support for patients considering 
-              or recovering from bariatric surgery.
+      <section className="bg-gradient-to-br from-[#1a2744] to-[#2a3754] py-16 md:py-24 text-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+              Our Services
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+              Physician-led, evidence-based obesity treatment focused on comprehensive evaluation and individualized care.
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4">Pre-Operative Support:</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Medical clearance and optimization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Pre-surgery weight loss guidance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Nutritional preparation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Psychological readiness assessment</span>
-                  </li>
-                </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Service 1: Comprehensive Obesity & Weight Management */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Icon */}
+              <div className="md:col-span-2 flex justify-center md:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center">
+                  <Heart className="w-10 h-10 md:w-12 md:h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-4">Post-Operative Support:</h3>
-                <ul className="space-y-2 text-gray-700">
+              
+              {/* Content */}
+              <div className="md:col-span-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+                  Comprehensive Obesity & Weight Management
+                </h2>
+                <ul className="space-y-3 text-gray-700 text-base md:text-lg">
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Recovery monitoring</span>
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Physician-led evaluation of obesity as a multisystem disease</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Dietary progression guidance</span>
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Evidence-based medical weight management, including GLP-1 / GIP-based therapies when clinically appropriate</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Long-term nutritional support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span>Lifestyle maintenance coaching</span>
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Focus on sustainable outcomes rather than short-term weight change</span>
                   </li>
                 </ul>
               </div>
@@ -466,27 +125,141 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 md:py-12 md:py-20 bg-[#1a2744] text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Health?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto w-full">
-            Schedule your comprehensive assessment and discover which program is right for you.
-          </p>
-          <Link 
-            href="/appointments"
-            className="inline-block bg-white text-[#1a2744] px-12 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition"
-          >
-            Book Your Assessment
-          </Link>
+      {/* Service 2: Cardiometabolic Risk Assessment */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Icon */}
+              <div className="md:col-span-2 flex justify-center md:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-red-50 to-red-100 rounded-full flex items-center justify-center">
+                  <Activity className="w-10 h-10 md:w-12 md:h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="md:col-span-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+                  Cardiometabolic Risk Assessment
+                </h2>
+                <ul className="space-y-3 text-gray-700 text-base md:text-lg">
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Cardiovascular risk evaluation in the context of obesity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Metabolic risk assessment, including diabetes and fatty liver disease</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Long-term risk reduction strategy aligned with individual physiology</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service 3: Pulmonary & Functional Performance Evaluation */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Icon */}
+              <div className="md:col-span-2 flex justify-center md:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-50 to-green-100 rounded-full flex items-center justify-center">
+                  <Wind className="w-10 h-10 md:w-12 md:h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="md:col-span-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+                  Pulmonary & Functional Performance Evaluation
+                </h2>
+                <ul className="space-y-3 text-gray-700 text-base md:text-lg">
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Assessment of pulmonary risk and exercise capacity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Identification of physiologic limitations affecting weight loss and health</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Performance-oriented approach to improving functional capacity and durability</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service 4: Personalized Health Strategy & Follow-Up */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Icon */}
+              <div className="md:col-span-2 flex justify-center md:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-full flex items-center justify-center">
+                  <Users className="w-10 h-10 md:w-12 md:h-12 text-[#1a2744]" strokeWidth={1.5} />
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="md:col-span-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+                  Personalized Health Strategy & Follow-Up
+                </h2>
+                <ul className="space-y-3 text-gray-700 text-base md:text-lg">
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Individualized care plans based on objective assessment</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Ongoing physician oversight as appropriate</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#1a2744] font-bold mr-3">•</span>
+                    <span>Thoughtful coordination with other specialists when indicated to ensure continuity of care</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#1a2744] to-[#2a3754] text-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Begin Your Journey?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+              Schedule a comprehensive evaluation to understand your health and develop a personalized treatment strategy.
+            </p>
+            <Link 
+              href="/appointments"
+              className="inline-block bg-white text-[#1a2744] px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+            >
+              Schedule Your Evaluation
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1a2744] text-white py-12 border-t border-gray-700">
+      <footer className="bg-[#1a2744] text-white py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          {/* Main Footer Content */}
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
@@ -501,15 +274,17 @@ export default function Services() {
             {/* Column 2 - Quick Links */}
             <div>
               <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-300 text-sm">
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/testimonials" className="hover:text-white transition">Testimonials</Link></li>
+                <li><Link href="/appointments" className="hover:text-white transition">Book Appointment</Link></li>
               </ul>
             </div>
 
-            {/* Column 3 - Contact Info */}
+            {/* Column 3 - Contact */}
             <div>
               <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
@@ -540,9 +315,15 @@ export default function Services() {
               <div className="mt-6">
                 <h4 className="font-semibold text-sm mb-3">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="hover:opacity-70 transition"><Facebook className="w-6 h-6" /></a>
-                  <a href="#" className="hover:opacity-70 transition"><Instagram className="w-6 h-6" /></a>
-                  <a href="#" className="hover:opacity-70 transition"><Linkedin className="w-6 h-6" /></a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="hover:opacity-70 transition">
+                    <Linkedin className="w-6 h-6" />
+                  </a>
                 </div>
               </div>
             </div>
