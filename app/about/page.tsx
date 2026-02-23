@@ -44,7 +44,7 @@ export default function AboutUs() {
             
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
+              <img src="/logo.jpg" alt="Lumena Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
               <span className="text-base md:text-xl font-medium text-gray-900">Lumena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </Link>
             
@@ -52,7 +52,7 @@ export default function AboutUs() {
             <div className="hidden md:flex space-x-8">
               <Link href="/testimonials" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Testimonials</Link>
               <Link href="/appointments" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Book Appointment</Link>
-              <Link href="/patient-portal" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
+              <Link href="/portal/login" className="text-gray-700 hover:text-gray-900 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Patient Portal</Link>
             </div>
 
             {/* Mobile Book Appointment Button */}
@@ -70,7 +70,7 @@ export default function AboutUs() {
               <Link href="/faq" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">FAQ</Link>
               <Link href="/testimonials" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Testimonials</Link>
               <Link href="/appointments" className="block text-gray-700 hover:text-gray-900 py-2 border-b border-gray-200">Book Appointment</Link>
-              <Link href="/patient-portal" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
+              <Link href="/portal/login" className="block text-gray-700 hover:text-gray-900 py-2">Patient Portal</Link>
             </div>
           )}
         </nav>
@@ -409,7 +409,7 @@ export default function AboutUs() {
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-white rounded-full"></div>
+                <img src="/logo.jpg" alt="Lumena Logo" className="w-12 h-12 object-contain" />
                 <span className="text-xl font-semibold">Lumena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">

@@ -43,7 +43,7 @@ export default function PatientPortal() {
             
             {/* Center Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
+              <img src="/logo.jpg" alt="Lumena Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
               <span className="text-base md:text-xl font-medium text-gray-900">Lumena Clinic<span className="hidden lg:inline"> and Therapeutics</span></span>
             </Link>
             
@@ -96,17 +96,31 @@ export default function PatientPortal() {
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
-            {/* Coming Soon Banner */}
-            <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-lg p-12 text-center mb-12 shadow-md">
+            {/* Now Available Banner */}
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-12 text-center mb-12 shadow-md border-2 border-green-300">
+              <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                NOW AVAILABLE
+              </div>
               <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] mb-4">
-                Coming Soon!
+                Patient Portal is Live!
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                Our secure patient portal is currently under development. Soon you'll be able to access all your health information in one convenient place.
+                Access your health information, communicate with your care team, and manage your appointments all in one secure place.
               </p>
-              <p className="text-gray-600">
-                We're working hard to bring you the best experience possible. Check back soon!
-              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  href="/portal/login"
+                  className="inline-block bg-[#1a2744] text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-[#2a3754] transition transform hover:scale-105"
+                >
+                  Login to Portal
+                </Link>
+                <Link 
+                  href="/portal/register"
+                  className="inline-block bg-white text-[#1a2744] border-2 border-[#1a2744] px-10 py-4 rounded-full text-lg font-semibold hover:bg-[#1a2744] hover:text-white transition transform hover:scale-105"
+                >
+                  Create Account
+                </Link>
+              </div>
             </div>
 
             {/* What to Expect */}
@@ -210,7 +224,7 @@ export default function PatientPortal() {
             {/* Column 1 - Logo & About */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-white rounded-full"></div>
+                <img src="/logo.jpg" alt="Lumena Logo" className="w-12 h-12 object-contain" />
                 <span className="text-xl font-semibold">Lumena Clinic and Therapeutics</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
