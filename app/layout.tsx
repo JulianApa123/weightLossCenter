@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Lato } from 'next/font/google';
 import "./globals.css";
+import Chatbot from "@/components/Chatbot";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${lato.variable}`}>
       <body className="antialiased">
         {children}
+        <Chatbot />
       </body>
     </html>
   );
